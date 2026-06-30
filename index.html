@@ -1645,7 +1645,27 @@ function initDashboard(){
     ['renderRentYearTable',renderRentYearTable],['renderRentDistTable',renderRentDistTable],['renderFinalSettlement',renderFinalSettlement],
     ['renderKhataLedgers',renderKhataLedgers],['renderKhataVerify',renderKhataVerify],['applyTextVars',applyTextVars]
   ];
-  steps.forEach(([name,fn])=>{ try{ fn(); }catch(e){ console.error('Render step failed: '+name, e); } });
+  const errs=[];
+  steps.forEach(([name,fn])=>{ try{ fn(); }catch(e){ console.error('Render step failed: '+name, e); errs.push(name+': '+(e&&e.stack?e.stack:e)); } });
+  // visible diagnostic so errors surface even without DevTools
+  if(errs.length){
+    try{
+      var d=document.getElementById('__diag')||document.createElement('div');
+      d.id='__diag';
+      d.style.cssText='position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#7f1d1d;color:#fff;font:12px/1.5 monospace;padding:10px;direction:ltr;text-align:left;white-space:pre-wrap;max-height:45vh;overflow:auto;border-top:3px solid #fca5a5';
+      d.textContent='⚠ RENDER ERRORS ('+errs.length+'):\n\n'+errs.join('\n\n');
+      document.body.appendChild(d);
+    }catch(_){}
+  }
+  // always-on tiny status chip (helps diagnose render vs CSS issues)
+  try{
+    var kl=document.getElementById('khata-ledgers'), vt=document.getElementById('verify-tb');
+    var c=document.createElement('div');
+    c.style.cssText='position:fixed;top:2px;left:2px;z-index:99999;background:'+(errs.length?'#b91c1c':'#065f46')+';color:#fff;font:11px monospace;padding:2px 6px;border-radius:4px;direction:ltr;opacity:.85';
+    c.textContent='diag khata:'+((kl&&kl.innerHTML||'').length)+' verify:'+((vt&&vt.innerHTML||'').length)+' err:'+errs.length;
+    c.onclick=function(){c.remove();};
+    document.body.appendChild(c);
+  }catch(_){}
 }
 if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',initDashboard); }
 else { setTimeout(initDashboard,0); }  // defer so const KHATA_DATA (declared below) is initialized
@@ -1687,7 +1707,10 @@ function khataRowHTML(r){
   `</tr>`;
 }
 function renderKhataLedgers(){
-  const wrap=document.getElementById('khata-ledgers'); if(!wrap||typeof KHATA_DATA==='undefined') return;
+  const wrap=document.getElementById('khata-ledgers');
+  if(!wrap) throw new Error('container #khata-ledgers not found in DOM');
+  if(typeof KHATA_DATA==='undefined') throw new Error('KHATA_DATA is undefined at render time');
+  if(!KHATA_DATA.order||!KHATA_DATA.ledgers) throw new Error('KHATA_DATA malformed: '+JSON.stringify(Object.keys(KHATA_DATA||{})));
   const head=`<thead><tr>
       <th style="width: 10%;">تاریخ</th>
       <th style="width: 25%;">تفصیل</th>
@@ -1732,7 +1755,9 @@ function _grp(n){ return Math.abs(n).toLocaleString('en-US'); }
 function _ledgerName(id){ const t=KHATA_DATA.ledgers[id].titleMain; const m=t.match(/بنام:\s*([^()]+?)\s*(?:\(|-|$)/); return m?m[1].trim():id; }
 function verifyFinals(L){ let e=null,w=null; L.rows.forEach(r=>{ if(r.k==='tx'){ if(r.e) e=parseBal(r.e); const bv=parseBal(r.b); if(bv!==null) w=bv; } }); return {written:w,corrected:e}; }
 function renderKhataVerify(){
-  const tb=document.getElementById('verify-tb'); if(!tb||typeof KHATA_DATA==='undefined') return;
+  const tb=document.getElementById('verify-tb');
+  if(!tb) throw new Error('container #verify-tb not found');
+  if(typeof KHATA_DATA==='undefined') throw new Error('KHATA_DATA undefined in verify');
   let html='', total=0;
   VERIFY_ORDER.forEach(v=>{
     if(v.missing){
