@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پلاٹ اور کرائے کی تقسیم کا مکمل حساب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', Arial, sans-serif;
+            background-color: #e5e7eb;
+            color: #111827;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
+        }
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        h3 {
+            color: #1d4ed8;
+            margin-top: 35px;
+            background-color: #eff6ff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-right: 5px solid #1d4ed8;
+        }
+        p, li {
+            font-size: 20px;
+            line-height: 2.4;
+        }
+        ul {
+            padding-right: 30px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #b91c1c; 
+        }
+        .math-box {
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            text-align: left;
+            direction: ltr;
+            color: #047857;
+            font-weight: bold;
+        }
+        .purpose-box {
+            background-color: #fffbeb;
+            border-right: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .purpose-box strong {
+            color: #b45309;
+            font-size: 21px;
+        }
+        .rent-box {
+            background-color: #f0fdf4;
+            border-right: 5px solid #16a34a;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        tr:hover {
+            background-color: #f3f4f6;
+        }
+        .khadim-row {
+            background-color: #fee2e2 !important;
+            color: #991b1b;
+            font-weight: bold;
+        }
+        .footer-note {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #4b5563;
+            text-align: center;
+            border-top: 1px solid #d1d5db;
+            padding-top: 15px;
+        }
+        .total-row {
+            background-color: #d1fae5 !important;
+            font-weight: bold;
+            font-size: 22px;
+            color: #065f46;
+        }
+        .calculation-text {
+            font-size: 15px;
+            color: #6b7280;
+            display: block;
+            margin-top: 5px;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>پلاٹ کی فروخت اور بقایا کرائے کی تقسیم کا مکمل حساب</h1>
+    
+    <div class="purpose-box">
+        <strong>یہ حساب اس طریقے سے کیوں کیا جا رہا ہے؟ (Purpose of Calculation)</strong>
+        <p>چونکہ اس پلاٹ میں ملکیت کے دو الگ الگ اصول ہیں۔ 2009 میں خریدا گیا <strong>2/3 حصہ</strong> پورے خاندان (والدہ، بہنوں اور بھائیوں) کا مشترکہ ہے جبکہ 2016 میں خریدا گیا کزن کا <strong>1/3 حصہ</strong> صرف 9 بھائیوں کا ہے۔ اس لیے پلاٹ کی فروخت (42,500,000) اور بقایا کرایہ (4,718,606) دونوں اسی تناسب (Ratio) سے تقسیم ہوں گے تاکہ ہر حق دار کو اس کی ملکیت کے حساب سے درست رقم ملے۔</p>
+    </div>
+
+    <h3>پہلا قدم: پلاٹ کے دو حصے (4 کروڑ 25 لاکھ)</h3>
+    <ul>
+        <li><strong>کزن کا 1 حصہ:</strong> <div class="math-box">42,500,000 ÷ 3 = 14,166,667 PKR</div></li>
+        <li><strong>خاندان کے 2 حصے:</strong> <div class="math-box">14,166,667 × 2 = 28,333,333 PKR</div></li>
+    </ul>
+
+    <h3>دوسرا قدم: خاندانی حصے کی تقسیم (28,333,333 روپے)</h3>
+    <ul>
+        <li><strong>والدہ کا حصہ (1/8):</strong> <div class="math-box">28,333,333 ÷ 8 = 3,541,667 PKR</div></li>
+        <li><strong>بہنوں اور بھائیوں کے لیے بچنے والی رقم:</strong> <div class="math-box">28,333,333 - 3,541,667 = 24,791,666 PKR</div></li>
+        <li><strong>بہن بھائیوں کے 20 حصے:</strong>
+            <div class="math-box">ایک بہن کا حصہ (1/20): 24,791,666 ÷ 20 = 1,239,583 PKR</div>
+            <div class="math-box">ایک بھائی کا حصہ (2/20): 1,239,583 × 2 = 2,479,166 PKR</div>
+        </li>
+    </ul>
+
+    <h3>تیسرا قدم: کزن کے حصے کی تقسیم (14,166,667 روپے)</h3>
+    <p>2016 کی انویسٹمنٹ (31 لاکھ) کی بنیاد پر آج کا منافع:</p>
+    <ul>
+        <li><strong>8 بھائیوں میں سے ہر ایک کا حصہ:</strong> <div class="math-box">14,166,667 × (222,000 ÷ 3,100,000) = 1,014,516 PKR</div></li>
+        <li><strong>خادم حسین کا حصہ:</strong> <div class="math-box">14,166,667 × (1,324,000 ÷ 3,100,000) = 6,050,539 PKR</div></li>
+    </ul>
+
+    <div class="rent-box">
+        <strong>چوتھا قدم: بقایا کرائے کی تقسیم (4,718,606 روپے)</strong>
+        <p>پلاٹ کے کرائے کو بھی ہم پلاٹ کی ملکیت والے فارمولے (2/3 خاندان اور 1/3 کزن والا حصہ) کے حساب سے تقسیم کریں گے۔ حساب کرنے کے بعد سب کا کرائے میں یہ حصہ بنتا ہے:</p>
+        <ul>
+            <li><strong>والدہ کا کرائے میں حصہ:</strong> 393,217 روپے</li>
+            <li><strong>ایک بہن کا کرائے میں حصہ:</strong> 137,626 روپے</li>
+            <li><strong>8 بھائیوں میں سے ہر ایک کا کرائے میں حصہ:</strong> 387,890 روپے</li>
+            <li><strong>خادم حسین کا کرائے میں حصہ:</strong> 947,017 روپے</li>
+        </ul>
+        <p><strong>ادائیگی کا طریقہ (Deduction):</strong> چونکہ کل کرایہ (4,718,606 روپے) بھائی خادم نے ادا کرنا ہے، اس لیے یہ رقم خادم کے پلاٹ والے حصے میں سے کاٹ (Deduct) لی جائے گی اور باقی سب ممبران کے پلاٹ کی رقم میں ان کا کرایہ جمع (Add) کر دیا جائے گا، یوں خادم کو نقد رقم نہیں دینی پڑے گی۔</p>
+    </div>
+
+    <h3>📊 حتمی لسٹ (پلاٹ کا حصہ + کرایہ = فائنل رقم)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>نمبر</th>
+                <th>نام (Name)</th>
+                <th>رشتہ</th>
+                <th>پلاٹ کا حصہ (PKR)</th>
+                <th>کرائے کا حصہ (PKR)</th>
+                <th>حتمی ملنے والی رقم (Net Payout)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>والدہ (Mother)</td>
+                <td>والدہ</td>
+                <td>3,541,667</td>
+                <td>+ 393,217</td>
+                <td><strong>3,934,884</strong> <span class="calculation-text">(3.93 Million)</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>سکینہ بی بی (Sakina Bibi)</td>
+                <td>بہن 1</td>
+                <td>1,239,583</td>
+                <td>+ 137,626</td>
+                <td><strong>1,377,209</strong> <span class="calculation-text">(1.37 Million)</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>کلثوم بی بی (Kalsoom Bibi)</td>
+                <td>بہن 2</td>
+                <td>1,239,583</td>
+                <td>+ 137,626</td>
+                <td><strong>1,377,209</strong> <span class="calculation-text">(1.37 Million)</span></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>غلام اصغر (Ghulam Asghar)</td>
+                <td>بھائی 1</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>غلام اکبر (Ghulam Akbar)</td>
+                <td>بھائی 2</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>عابد حسین (Abid Hussain)</td>
+                <td>بھائی 3</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr class="khadim-row">
+                <td>7</td>
+                <td>خادم حسین (Khadim Hussain)</td>
+                <td>بھائی 4</td>
+                <td>8,529,711</td>
+                <td>+ 947,017<br><span style="color:red; font-size:15px;">- 4,718,606 (واجب الادا)</span></td>
+                <td><strong>4,758,122</strong> <span class="calculation-text">(8.52M + 0.94M - 4.71M)</span></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>غلام فاروق (Ghulam Farooq)</td>
+                <td>بھائی 5</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>عبدالقیوم (Abdul Qayyum)</td>
+                <td>بھائی 6</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>صفدر علی (Safdar Ali)</td>
+                <td>بھائی 7</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>امجد علی (Amjad Ali)</td>
+                <td>بھائی 8</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>شاہد علی (Shahid Ali)</td>
+                <td>بھائی 9</td>
+                <td>3,493,682</td>
+                <td>+ 387,890</td>
+                <td><strong>3,881,572</strong> <span class="calculation-text">(3.88 Million)</span></td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="5">حتمی تقسیم شدہ رقم (Total Sale Amount)</td>
+                <td>42,500,000 (4 کروڑ 25 لاکھ)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer-note">
+        نوٹ: تمام حق داروں کی حتمی رقم جمع کرنے پر پوری رقم 4 کروڑ 25 لاکھ بنتی ہے۔ خادم حسین کے ذمے موجود کرائے کو ان کے حصے میں سے کاٹ کر سب کے حصوں میں شامل کر دیا گیا ہے تاکہ خریدار کی طرف سے ملنے والی رقم میں سے ہی سب کا حساب کلیئر ہو جائے۔
+    </div>
+</div>
+
+</body>
+</html>
