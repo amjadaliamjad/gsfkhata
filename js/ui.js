@@ -442,6 +442,11 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
         // Generate Year-by-Year breakdown for Modal
         let memberYearBreakdown = `
         <div style="max-height:60vh;overflow-y:auto;direction:rtl">
+        <div style="background:#fefce8; border:1px solid #fef08a; padding:12px; border-radius:6px; margin-bottom:15px; font-size:14px; color:#854d0e;">
+            <strong>💡 منافع اتنا زیادہ کیوں ہے؟ (وضاحت)</strong><br>
+            جو کرایہ 2017 میں خادم کے پاس جمع ہوا، وہ 9 سال تک پلاٹ میں انویسٹڈ رہا۔ 2017 میں پلاٹ کی قیمت 93 لاکھ تھی جو اب 4.25 کروڑ ہے (یعنی <b>4.57 گنا</b> اضافہ)۔ 
+            اس لیے 2017 کے کرائے کو <b>4.57</b> سے ضرب دی گئی ہے۔ مثلاً: 19,950 × 4.57 = 91,169 روپے۔ ہر سال کا ملٹی پلائر اس کے رکے ہوئے عرصے کے حساب سے کم ہوتا جاتا ہے۔
+        </div>
         <p style="margin-top:0;margin-bottom:15px;color:var(--g600);font-size:14px;">یہ جدول ${m.name} کے کرائے کا سال بہ سال حساب دکھاتا ہے کہ ہر سال کی رکی ہوئی رقم پر کتنا منافع (Capital Gain) ملا۔</p>
         <table class="tbl" style="width:100%;font-size:14px;border:1px solid var(--g200)">
             <thead>
@@ -615,11 +620,11 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                         <strong style="direction:ltr;text-align:right">Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</strong>
                     </div>
                     <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
-                        <span>3. پلاٹ کی قدر کا منافع ملٹی پلائر (2017 تا 2026):<br><small style="color:var(--g400)">2017 میں پلاٹ کی مالیت تقریباً 93 لاکھ تھی، آج 4.25 کروڑ ہے۔ (4.25 کروڑ ÷ 93 لاکھ)</small></span>
+                        <span>3. پلاٹ کی قدر کا منافع ملٹی پلائر (2017 تا 2026):<br><small style="color:var(--g400)">2017 میں پلاٹ کی مالیت تقریباً 93 لاکھ تھی، آج 4.25 کروڑ ہے۔ (4.25 کروڑ ÷ 93 لاکھ = 4.569)</small></span>
                         <strong style="color:var(--gm); direction:ltr;text-align:right">x ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)}</strong>
                     </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
-                        <span>4. بھائی کے 2017 کے حصے کی آج (2026) میں قیمت:<br><small style="color:var(--g400)">Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)} × ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)}</small></span>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px; background:#fefce8; padding:10px; border-radius:6px; margin:5px 0;">
+                        <span>4. بھائی کے 2017 کے حصے کی آج (2026) میں قیمت:<br><small style="color:var(--g400)">حساب: Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)} × ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)} ملٹی پلائر</small></span>
                         <strong style="color:var(--blu); font-size:17px; direction:ltr;text-align:right">Rs. ${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</strong>
                     </div>
                     <div style="display:flex; justify-content:space-between;">
