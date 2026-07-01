@@ -644,14 +644,16 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
             <div style="background-color: var(--blt); padding: 15px 20px; border-bottom: 1px solid #bfdbfe; font-size: 15px; line-height: 1.8; color: #1e3a8a;">
                 <strong style="font-size:17px;">📌 کرائے اور نقد لین دین کو الگ کیوں کیا گیا؟</strong><br />
                 <p style="margin-top: 5px; margin-bottom: 10px">
-                    کھاتے میں دو مختلف قسم کی رقوم شامل تھیں: <b>پلاٹ کا کرایہ</b> (جو سالوں تک رکا رہا اور جس پر منافع/Capital Gain لاگو ہوتا ہے) اور <b>خالص نقد لین دین</b> (عام قرضے یا ادائیگیاں جن پر کوئی منافع نہیں)۔<br>
-                    اگر ہم ان دونوں کو الگ نہ کرتے، تو تمام رقم (نقد اور قرض) پر بھی منافع لگ جاتا جو کہ غلط اور غیر شرعی ہوتا۔ اس لیے اس ٹیبل میں کرائے کو الگ کر کے صرف بقایا نقد رقم نکالی گئی ہے، تاکہ نئے فکسڈ کرائے میں اسے شفافیت کے ساتھ ایڈجسٹ کیا جا سکے۔
+                    کھاتے میں دو مختلف قسم کی رقوم شامل تھیں: <b>پلاٹ کا کرایہ</b> اور <b>خالص نقد لین دین</b>۔ 
+                    ہمیں یہ دیکھنا تھا کہ ہر ممبر نے کتنا نقد پیسہ خادم سے لیا (یا دیا) ہے۔ اس کے لیے ہم نے کل کھاتے میں سے درج شدہ کرایوں کو الگ کر لیا ہے۔
                 </p>
                 <strong style="font-size:16px; display:inline-block; margin-top:10px;">📊 کالمز کا فارمولا سمجھیں:</strong>
                 <ul style="margin-top: 5px; margin-bottom: 0; padding-right:20px;">
-                    <li><b>بقیہ نقد لین دین (C)</b> = درست شدہ بقایا (A) ➖ پلاٹ کا کرایہ (B) جو پہلے ہی کھاتے میں جمع تھا۔</li>
-                    <li><b>نیا فکسڈ کرایہ (D)</b> = وہ حتمی حصہ (منافع کے ساتھ) جو کیلکولیٹر نے ہر ممبر کے لیے طے کیا ہے (اوپر والے ٹیبل سے)۔</li>
-                    <li><b>حتمی قابل ادا</b> = (نیا فکسڈ کرایہ) ➕ (بقیہ نقد لین دین)۔ <i>یعنی اگر آپ نے خادم سے کچھ نقد لیا ہوا ہے (نقد مائنس میں ہے) تو وہ آپ کے نئے کرائے میں سے کٹ جائے گا۔</i></li>
+                    <li><b>درست شدہ بقایا (A)</b> = کھاتے کا موجودہ فائنل بیلنس۔</li>
+                    <li><b>درج کل کرایہ (B)</b> = کھاتے میں جمع کیے گئے کرائے کی انٹریز کا ٹوٹل۔</li>
+                    <li><b>نقد وصولی (C = B - A)</b> = کرائے میں سے بقایا نکالیں تو پتہ چلتا ہے کہ آپ نے خادم سے کتنا خالص نقد لیا ہے۔</li>
+                    <li><b>کل فکسڈ کرایہ (D)</b> = آپ کا اصل کل کرایہ (مثلاً 4.12 لاکھ)۔</li>
+                    <li><b>حتمی بقایا (D - C)</b> = آپ کے اصل کرائے میں سے آپ کی نقد وصولی کو مائنس کیا گیا ہے۔</li>
                 </ul>
             </div>
 
@@ -661,10 +663,10 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                         <tr>
                             <th style="background:#f1f5f9;color:#1e40af;padding:12px;">نام</th>
                             <th style="background:#f8fafc;color:#334155;padding:12px;">درست شدہ بقایا<br><small style="font-weight:normal;color:#64748b">(A)</small></th>
-                            <th style="background:#fef2f2;color:#991b1b;padding:12px;">پلاٹ کا کرایہ (جمع) ℹ️<br><small style="font-weight:normal;color:#ef4444">(B)</small></th>
-                            <th style="background:#fefce8;color:#854d0e;padding:12px;">بقیہ نقد لین دین ℹ️<br><small style="font-weight:normal;color:#ca8a04">(C = A - B)</small></th>
-                            <th style="background:#f0fdf4;color:#16a34a;padding:12px;">نیا فکسڈ کرایہ<br><small style="font-weight:normal;color:#22c55e">(D)</small></th>
-                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی قابل ادا<br><small style="font-weight:normal;color:#6366f1">(C + D)</small></th>
+                            <th style="background:#fef2f2;color:#991b1b;padding:12px;">درج کل کرایہ ℹ️<br><small style="font-weight:normal;color:#ef4444">(B)</small></th>
+                            <th style="background:#fefce8;color:#854d0e;padding:12px;">نقد وصولی ℹ️<br><small style="font-weight:normal;color:#ca8a04">(C = B - A)</small></th>
+                            <th style="background:#f0fdf4;color:#16a34a;padding:12px;">کل فکسڈ کرایہ<br><small style="font-weight:normal;color:#22c55e">(D)</small></th>
+                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی بقایا<br><small style="font-weight:normal;color:#6366f1">(D - C)</small></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -680,28 +682,24 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                             
                             let durust = tCredit - tDebit;
                             let rentJuma = rCredit - rDebit;
-                            let naqad = durust - rentJuma;
+                            let cashWithdrawn = rentJuma - durust; // B - A
                             
                             let isMother = m.id === 'mother';
                             let isSister = m.id.startsWith('sister');
-                            let newRent = isMother ? s2.mother.rent : (isSister ? s2.sisters.rent : s2.brotherBase.rent);
-                            if (m.isAdmin) newRent = 0; // Wait, Khadim's rent is owed by him to family, but here "نیا فکسڈ کرایہ" means his SHARE of rent. Wait, Khadim's share is the same as brotherBase!
+                            let newRent = isMother ? s1.mother.rent : (isSister ? s1.sisters.rent : s1.brotherBase.rent);
+                            if (m.isAdmin) newRent = 0;
                             
-                            let finalPayable = newRent + naqad; // If naqad is positive (he deposited cash), it ADDS to his payable? Wait. If he deposited cash, he should get MORE. If newRent is what family owes HIM.
-                            // Let's check logic:
-                            // For Ghulam Asghar: naqad = -7,722 (he withdrew cash). newRent = 500,000. 
-                            // Family owes him 500,000 for rent. He took 7,722 cash. Family owes him: 500,000 - 7,722 = 492,278!
-                            // So finalPayable = newRent + naqad! (-7,722 + 500,000 = 492,278).
+                            let finalPayable = newRent - cashWithdrawn; // D - C
                             
                             return `
                             <tr style="background:${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
                                 <td style="padding:12px;font-weight:bold;">${i+1}. ${m.name}</td>
                                 <td class="n" style="padding:12px;">${num(durust)}</td>
                                 <td class="n" style="padding:12px;color:#b91c1c;cursor:pointer;background:#FEF2F2;" onclick="app.showInfo('${m.name} - کرایہ ریکارڈ', window.generateLedgerTable('${m.id}', 'rent'))">
-                                    − ${num(rentJuma)}
+                                    ${num(rentJuma)}
                                 </td>
                                 <td class="n" style="padding:12px;color:#854d0e;font-weight:bold;cursor:pointer;background:#FEFCE8;" onclick="app.showInfo('${m.name} - نقد لین دین', window.generateLedgerTable('${m.id}', 'cash'))">
-                                    ${num(naqad)} ${naqad < 0 ? '<br><span style="font-size:11px;font-weight:normal;">(خادم کو دینے ہیں)</span>' : ''}
+                                    ${num(cashWithdrawn)} ${cashWithdrawn < 0 ? '<br><span style="font-size:11px;font-weight:normal;color:#16a34a">(خادم سے نقد جمع کروایا)</span>' : ''}
                                 </td>
                                 <td class="n" style="padding:12px;color:#16a34a;">${num(newRent)}</td>
                                 <td class="n" style="padding:12px;color:#3730a3;font-size:18px;font-weight:bold;background:#e0e7ff;">${num(finalPayable)}</td>
