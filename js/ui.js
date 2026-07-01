@@ -1181,24 +1181,73 @@ export function renderKhata(config, ledgers, idParam) {
                                 <th style="background:var(--g100);color:var(--g800);padding:15px;">حوالہ (Page)</th>
                                 <th style="background:var(--g100);color:var(--g800);padding:15px;">جمع (Credit)</th>
                                 <th style="background:var(--g100);color:var(--g800);padding:15px;">نام (Debit)</th>
-                                <th style="background:var(--g100);color:var(--g800);padding:15px;">بیلنس</th>
+                                <th style="background:var(--g100);color:var(--g800);padding:15px;">لکھی گئی بقایا</th>
+                                <th style="background:var(--g100);color:var(--g800);padding:15px;">متوقع بقایا (Expected)</th>
                             </tr>
                         </thead>
                         <tbody>
-                            ${ledger.length > 0 ? ledger.map((l, i) => `
-                                <tr style="background:${i%2===0 ? 'var(--w)' : 'var(--g50)'}; border-bottom:1px solid var(--g200);">
-                                    <td class="n" style="padding:12px 15px; font-weight:bold; color:var(--g500); text-align:center;">${l.id || i+1}</td>
-                                    <td style="padding:12px 15px; text-align:center;">
-                                        <span style="font-size:12px; padding:4px 8px; border-radius:12px; font-weight:bold; ${l.type === 'rent' ? 'background:#dcfce7; color:#166534; border:1px solid #bbf7d0;' : 'background:#f1f5f9; color:#475569; border:1px solid #e2e8f0;'}">${l.type === 'rent' ? 'کرایہ' : 'نقد / دیگر'}</span>
-                                    </td>
-                                    <td class="n" style="padding:12px 15px; white-space:nowrap; color:var(--g600);">${l.date}</td>
-                                    <td style="padding:12px 15px; line-height:1.6; color:var(--g800);">${l.description}</td>
-                                    <td class="n" style="padding:12px 15px; color:var(--g400); text-align:center;">${l.page||'-'}</td>
-                                    <td class="ng n" style="padding:12px 15px; font-weight:bold;">${l.credit ? num(String(l.credit).replace(/,/g, '')) : '-'}</td>
-                                    <td class="nr n" style="padding:12px 15px;">${l.debit ? num(String(l.debit).replace(/,/g, '')) : '-'}</td>
-                                    <td class="nb n" style="padding:12px 15px; font-weight:bold; background:${i%2===0 ? 'var(--gp)' : '#c6ebd1'}; border-right:1px solid var(--g200);">${l.balance||'-'}</td>
-                                </tr>
-                            `).join('') : '<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--g400);font-size:18px;">اس ممبر کا کوئی پرانا کھاتہ ریکارڈ نہیں ملا</td></tr>'}
+                            ${(function() {
+                                if(ledger.length === 0) return '<tr><td colspan="9" style="text-align:center;padding:40px;color:var(--g400);font-size:18px;">اس ممبر کا کوئی پرانا کھاتہ ریکارڈ نہیں ملا</td></tr>';
+                                
+                                let expectedRunningBalance = 0;
+                                let totalCredit = 0;
+                                let totalDebit = 0;
+                                
+                                let rowsHtml = ledger.map((l, i) => {
+                                    let cr = parseInt(String(l.credit||'').replace(/,/g, '')) || 0;
+                                    let dr = parseInt(String(l.debit||'').replace(/,/g, '')) || 0;
+                                    totalCredit += cr;
+                                    totalDebit += dr;
+                                    expectedRunningBalance += (cr - dr);
+                                    
+                                    let expAbs = Math.abs(expectedRunningBalance);
+                                    let expType = expectedRunningBalance === 0 ? '' : (expectedRunningBalance > 0 ? ' (جمع)' : ' (نام)');
+                                    let expStr = num(expAbs) + expType;
+                                    
+                                    let writtenBaqaya = String(l.balance||'').replace(/[^0-9]/g, '');
+                                    let writtenNum = parseInt(writtenBaqaya);
+                                    let expectedStyle = 'color:var(--g800);';
+                                    
+                                    if (writtenNum && writtenNum !== expAbs) {
+                                        expectedStyle = 'color:#dc2626; font-weight:bold;';
+                                    } else if (writtenNum && writtenNum === expAbs) {
+                                        expectedStyle = 'color:#16a34a; font-weight:bold;';
+                                    }
+
+                                    return `
+                                        <tr style="background:${i%2===0 ? 'var(--w)' : 'var(--g50)'}; border-bottom:1px solid var(--g200);">
+                                            <td class="n" style="padding:12px 15px; font-weight:bold; color:var(--g500); text-align:center;">${l.id || i+1}</td>
+                                            <td style="padding:12px 15px; text-align:center;">
+                                                <span style="font-size:12px; padding:4px 8px; border-radius:12px; font-weight:bold; ${l.type === 'rent' ? 'background:#dcfce7; color:#166534; border:1px solid #bbf7d0;' : 'background:#f1f5f9; color:#475569; border:1px solid #e2e8f0;'}">${l.type === 'rent' ? 'کرایہ' : 'نقد / دیگر'}</span>
+                                            </td>
+                                            <td class="n" style="padding:12px 15px; white-space:nowrap; color:var(--g600);">${l.date}</td>
+                                            <td style="padding:12px 15px; line-height:1.6; color:var(--g800);">${l.description}</td>
+                                            <td class="n" style="padding:12px 15px; color:var(--g400); text-align:center;">${l.page||'-'}</td>
+                                            <td class="ng n" style="padding:12px 15px; font-weight:bold;">${l.credit ? num(String(l.credit).replace(/,/g, '')) : '-'}</td>
+                                            <td class="nr n" style="padding:12px 15px;">${l.debit ? num(String(l.debit).replace(/,/g, '')) : '-'}</td>
+                                            <td class="nb n" style="padding:12px 15px; font-weight:bold; background:${i%2===0 ? 'var(--gp)' : '#c6ebd1'}; border-right:1px solid var(--g200);">${l.balance||'-'}</td>
+                                            <td class="n" style="padding:12px 15px; ${expectedStyle}">${expStr}</td>
+                                        </tr>
+                                    `;
+                                }).join('');
+
+                                let finalAbs = Math.abs(expectedRunningBalance);
+                                let finalType = expectedRunningBalance === 0 ? 'کوئی بقایا نہیں' : (expectedRunningBalance > 0 ? 'جمع (Credit)' : 'نام (Debit)');
+                                let finalTypeColor = expectedRunningBalance > 0 ? 'var(--gd)' : '#dc2626';
+                                
+                                let summaryRow = `
+                                    <tr style="background:var(--g100); border-top:2px solid var(--gd);">
+                                        <td colspan="5" style="padding:15px; font-weight:bold; text-align:left; color:var(--g800);">کل میزان (Total):</td>
+                                        <td class="ng n" style="padding:15px; font-weight:bold; font-size:16px;">${num(totalCredit)}</td>
+                                        <td class="nr n" style="padding:15px; font-weight:bold; font-size:16px;">${num(totalDebit)}</td>
+                                        <td colspan="2" class="n" style="padding:15px; font-weight:bold; text-align:center; color:${finalTypeColor}; font-size:16px;">
+                                            حتمی بیلنس: ${num(finalAbs)} — ${finalType}
+                                        </td>
+                                    </tr>
+                                `;
+                                
+                                return rowsHtml + summaryRow;
+                            })()}
                         </tbody>
                     </table>
                 </div>
