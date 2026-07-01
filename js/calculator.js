@@ -99,6 +99,10 @@ export function calculateScenarios(config) {
         let totalOpt1 = 0;
         let totalOpt2 = 0;
 
+        let numYears = A.endYear - A.startYear;
+        let calcIncrement = Math.pow(A.endRatePerAcre2026 / A.baseRatePerAcre2016, 1 / numYears) - 1;
+        agri.incrementPercent = (calcIncrement * 100).toFixed(2);
+
         let khadimOpt1Kanals = 10.9;
         let khadimOpt2Kanals = 4.9;
 
@@ -126,7 +130,7 @@ export function calculateScenarios(config) {
                 cultivators: cultivators
             });
 
-            currentRate = Math.round(currentRate * (1 + (A.annualIncrementPercent/100)));
+            currentRate = Math.round(currentRate * (1 + calcIncrement));
         }
         
         agri.years = yearlyData;

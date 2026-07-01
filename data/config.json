@@ -18,7 +18,7 @@
     "totalAcres": 7,
     "kanalsPerAcre": 8,
     "baseRatePerAcre2016": 50000,
-    "annualIncrementPercent": 15,
+    "endRatePerAcre2026": 120000,
     "startYear": 2016,
     "endYear": 2026,
     "cultivators": {

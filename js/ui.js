@@ -1265,7 +1265,7 @@ export function renderAgriculture(config, calcDataAll) {
     <div class="card-ex" style="background:#F0FDF4;border-color:var(--gm)">
         <h2 style="color:var(--gm)">🌾 زرعی زمین کا ٹھیکہ (Agriculture Land Lease)</h2>
         <p>اس صفحے پر کل 7 ایکڑ زرعی زمین کے ٹھیکے کا حساب درج ہے۔ 2016 سے لے کر 2026 تک، چونکہ خادم کی زمین دوسرے بھائیوں (غلام اکبر، عابد حسین، اور عبدالقیوم) نے کاشت کی، اس لیے ان پر خادم کا ٹھیکہ واجب الادا ہے۔</p>
-        <p><b>بنیادی ریٹ (2016):</b> ${num(A.baseRatePerAcre2016)} روپے فی ایکڑ | <b>سالانہ اضافہ:</b> ${A.annualIncrementPercent}%</p>
+        <p><b>بنیادی ریٹ (2016):</b> ${num(A.baseRatePerAcre2016)} روپے فی ایکڑ | <b>سالانہ اضافہ:</b> تقریباً ${agri.incrementPercent}% (2026 میں 1,20,000 ریٹ کے حساب سے)</p>
     </div>
 
     <!-- Annual Rates Table -->
