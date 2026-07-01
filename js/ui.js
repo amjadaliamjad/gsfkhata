@@ -765,17 +765,20 @@ window.generateLedgerTable = function(memberId, type) {
                     <td style="padding:10px;color:#16a34a;text-align:left;" dir="ltr">${num(totalCredit)}</td>
                     <td style="padding:10px;color:#dc2626;text-align:left;" dir="ltr">${num(totalDebit)}</td>
                 </tr>
-                ${type === 'cash' ? `
-                <tr style="background:#e2e8f0; font-weight:bold; font-size:15px;">
-                    <td colspan="3" style="padding:12px;text-align:left;color:#854d0e;">خالص نقد وصولی (نام ➖ جمع):</td>
-                    <td colspan="2" style="padding:12px;text-align:center;color:#854d0e;" dir="ltr">${num(totalDebit - totalCredit)}</td>
-                </tr>
-                ` : `
-                <tr style="background:#e2e8f0; font-weight:bold; font-size:15px;">
-                    <td colspan="3" style="padding:12px;text-align:left;color:#991b1b;">خالص کرایہ جمع (جمع ➖ نام):</td>
-                    <td colspan="2" style="padding:12px;text-align:center;color:#991b1b;" dir="ltr">${num(totalCredit - totalDebit)}</td>
-                </tr>
-                `}
+                ${(() => {
+                    let net = totalCredit - totalDebit;
+                    let isCredit = net >= 0;
+                    let absNet = Math.abs(net);
+                    let title = type === 'cash' ? 'خالص نقد بیلنس:' : 'خالص کرایہ بیلنس:';
+                    let typeText = isCredit ? '<span style="color:#16a34a;">جمع (Credit)</span>' : '<span style="color:#dc2626;">نام (Debit)</span>';
+                    
+                    return `
+                    <tr style="background:#e2e8f0; font-weight:bold; font-size:15px;">
+                        <td colspan="3" style="padding:12px;text-align:left;color:#0f172a;">${title}</td>
+                        <td colspan="2" style="padding:12px;text-align:center;color:#0f172a;" dir="ltr">${num(absNet)} ${typeText}</td>
+                    </tr>
+                    `;
+                })()}
             </tfoot>
         </table>
     </div>
