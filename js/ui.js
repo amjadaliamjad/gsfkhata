@@ -565,81 +565,10 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
         </div>
     </div>
 
-    <!-- Profit Distribution Table -->
-    <br>
-    <div class="table-container">
-        <h3 style="background:var(--gm);color:white;justify-content:center;font-size:22px;border:none;">خاندانی ممبران کے کرائے کی تفصیل (کرایہ وصولی اور منافع)</h3>
-        <div style="padding:20px;background:var(--w);font-size:15px;line-height:2;color:var(--g800);border-bottom:1px solid var(--g200);">
-            یہ ٹیبل ہر ممبر کے ذاتی کھاتے کی تفصیل بتاتا ہے۔ چونکہ کرایہ سالوں تک رکا رہا، اس لیے شرعی اصول (طریقہ 2) کے تحت ہر ممبر کو اس کے کرائے پر <b>پلاٹ کی قدر میں اضافے (Capital Gain)</b> کے حساب سے منافع دیا گیا ہے۔<br>
-            مثال کے طور پر: اگر کسی بھائی کا کل بنیادی کرایہ ${num(s1.brotherBase.rent)} بنتا تھا، تو پلاٹ کا منافع لگنے کے بعد اسے <b>${num(s2.brotherBase.rent - s1.brotherBase.rent)}</b> روپے کا خالص فائدہ (Profit) مل رہا ہے!
-        </div>
-        <div class="tw">
-            <table class="tbl">
-                <thead>
-                    <tr>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">#</th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">ممبر کا نام</th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">بنیادی حصہ<br>(بغیر منافع)</th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">
-                            کرائے پر منافع<br>(Capital Gain)
-                            <span class="t-info" style="margin-right:5px;font-size:14px" onclick="app.showInfo('کرائے پر منافع کا حساب', 'یہ منافع اس بات پر مبنی ہے کہ جو کرایہ جس سال خادم کے پاس جمع ہوا، اس کی آج (2026) میں کیا قیمت ہے۔<br><br>پلاٹ کی قیمت 2017 سے لے کر آج تک جس رفتار سے بڑھی ہے (تقریباً 18.4 فیصد سالانہ)، کرائے کی رکی ہوئی رقم کو بھی اسی حساب سے ضرب دی گئی ہے۔<br>مثلاً: 2017 کا کرایہ جو آج تک رکا رہا، اس پر 9 سالوں کا منافع لگایا گیا ہے۔')">ℹ️</span>
-                        </th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">منافع کی شرح</th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">کل کرایہ حصہ<br>(منافع کیساتھ)</th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">پہلے سے وصول شدہ</th>
-                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">نیٹ بقایا وصولی</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${memberRows}
-                </tbody>
-            </table>
-        </div>
-        <div class="table-expl">
-            <p><strong>کرائے پر منافع (Capital Gain) کیسے حساب کیا گیا؟</strong></p>
-            <p>یہ منافع اس شرعی اور منطقی اصول پر مبنی ہے کہ پیسے کی قدر وقت کے ساتھ گرتی ہے (Inflation)۔ جو کرایہ جس سال خادم کے پاس جمع ہوا، اگر اسے اسی وقت خاندانی ممبران میں تقسیم کر دیا جاتا تو وہ اسے کہیں انویسٹ کر سکتے تھے۔</p>
-            <ul>
-                <li>چونکہ کرائے کی رقم پلاٹ سے ہی آ رہی ہے، اس لیے <b>کرائے کو بھی پلاٹ ہی کا حصہ مان کر</b> اسے اسی رفتار سے بڑھایا گیا ہے جس رفتار سے پلاٹ کی قیمت بڑھی ہے۔</li>
-                <li>پلاٹ کی قیمت 2017 سے لے کر آج تک <b>تقریباً 18.4 فیصد سالانہ</b> کے حساب سے بڑھی ہے۔</li>
-                <li>اس طریقے (طریقہ 2) میں خادم کے پاس رکے ہوئے ہر سال کے کرائے کو 18.4% سالانہ کے حساب سے ضرب دے کر آج (2026) کی ویلیو نکالی گئی ہے۔ اس طرح خاندان کو ان کے رکے ہوئے پیسوں پر بہترین اور منصفانہ منافع مل رہا ہے!</li>
-                <li><b>کرائے کے اتار چڑھاؤ کا حساب:</b> ابتدائی سالوں میں کرایہ کم تھا لیکن وہ رقم زیادہ عرصے تک رکی رہی، جبکہ آخری سالوں میں کرایہ زیادہ تھا لیکن وہ کم عرصے کے لیے رکا۔ ہمارا کیلکولیٹر اوسط (Average) نکالنے کے بجائے <b>ہر سال کے کرائے کا الگ الگ کمپاؤنڈ (Compound) حساب</b> کرتا ہے۔ اس طرح کم یا زیادہ کرائے کا فرق خودکار طریقے سے بالکل درست اور 100 فیصد شفافیت کے ساتھ حل ہو جاتا ہے۔</li>
-            </ul>
-
-            <!-- Practical Example Section -->
-            <div style="background:var(--w); padding:20px; border-radius:8px; margin-top:20px; border-right:4px solid var(--gm); box-shadow:0 2px 4px rgba(0,0,0,0.05);">
-                <h4 style="color:var(--gd); margin-top:0; font-size:18px;">🧮 عملی مثال: صرف سال 2017 کے کرائے پر ایک بھائی کا منافع</h4>
-                <p>آئیے سمجھیں کہ کیلکولیٹر نے <b>صرف سال 2017</b> کے کرائے پر ایک حصہ دار بھائی (مثلاً غلام اصغر) کا منافع کس طرح نکالا (کراس ویریفکیشن کے لیے):</p>
-                
-                <div style="display:flex; flex-direction:column; gap:12px; font-family:Arial, sans-serif; direction:rtl; text-align:right; background:var(--g50); padding:20px; border-radius:6px; font-size:15px; border:1px solid var(--g200);">
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
-                        <span>1. سال 2017 کا کل کرایہ (بغیر منافع):</span>
-                        <strong style="direction:ltr;text-align:right">Rs. ${num(s2.rentByYear[0].base)}</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
-                        <span>2. ایک بھائی کا 2017 کا حصہ: <br><small style="color:var(--g400)">(کل کرایہ - والدہ کا 1/8 حصہ) ÷ 10</small></span>
-                        <strong style="direction:ltr;text-align:right">Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
-                        <span>3. پلاٹ کی قدر کا منافع ملٹی پلائر (2017 تا 2026):<br><small style="color:var(--g400)">2017 میں پلاٹ کی مالیت تقریباً 93 لاکھ تھی، آج 4.25 کروڑ ہے۔ (4.25 کروڑ ÷ 93 لاکھ = 4.569)</small></span>
-                        <strong style="color:var(--gm); direction:ltr;text-align:right">x ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)}</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px; background:#fefce8; padding:10px; border-radius:6px; margin:5px 0;">
-                        <span>4. بھائی کے 2017 کے حصے کی آج (2026) میں قیمت:<br><small style="color:var(--g400)">حساب: Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)} × ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)} ملٹی پلائر</small></span>
-                        <strong style="color:var(--blu); font-size:17px; direction:ltr;text-align:right">Rs. ${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between;">
-                        <span>5. صرف 2017 کے کرائے پر ایک بھائی کا خالص منافع (Capital Gain):</span>
-                        <strong style="color:var(--gd); direction:ltr;text-align:right">Rs. ${num(((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10) - ((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10))}</strong>
-                    </div>
-                </div>
-                
-                <p style="margin-top:15px; margin-bottom:0;">اس ایک سال کی مثال سے ثابت ہوتا ہے کہ بھائی کا <b>${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</b> روپے جو 9 سال تک رکا رہا، اب پلاٹ کے اضافے کے ساتھ بڑھ کر <b>${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</b> بن چکا ہے۔ ہمارا کیلکولیٹر اسی طرح 2018، 2019 اور ہر سال کا الگ الگ حساب کر کے تمام بھائیوں کے کھاتے مکمل شفافیت کے ساتھ کراس ویریفائی (Cross Verify) کرتا ہے۔</p>
-            </div>
-        </div>
-
         <!-- ════ NEW TABLE: Fixed Rent Final Adjustment ════ -->
-        <div style="background-color: #ffffff; border: 2px solid var(--blu); margin-top: 40px; border-radius:12px; overflow:hidden; box-shadow:var(--s2);">
-            <h2 style="background:var(--blu); color:white; margin:0; padding:15px 20px;">طے شدہ فکسڈ کرائے کے مطابق کھاتوں کی حتمی ایڈجسٹمنٹ</h2>
+        <br>
+    <div class="table-container">
+        <h3 style="background:var(--gd);color:white;justify-content:center;font-size:24px;border:none;">طے شدہ فکسڈ کرائے کے مطابق کھاتوں کی حتمی ایڈجسٹمنٹ</h3>
             
             <div style="background-color: var(--blt); padding: 15px 20px; border-bottom: 1px solid #bfdbfe; font-size: 15px; line-height: 1.8; color: #1e3a8a;">
                 <strong style="font-size:17px;">📌 اس ٹیبل کا مقصد کیا ہے اور یہ کیسے کام کرتا ہے؟</strong><br />
@@ -717,6 +646,79 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
             </div>
         </div>
     </div>
+
+    <!-- Profit Distribution Table -->
+    <br>
+    <div class="table-container">
+        <h3 style="background:var(--gm);color:white;justify-content:center;font-size:22px;border:none;">خاندانی ممبران کے کرائے کی تفصیل (کرایہ وصولی اور منافع)</h3>
+        <div style="padding:20px;background:var(--w);font-size:15px;line-height:2;color:var(--g800);border-bottom:1px solid var(--g200);">
+            یہ ٹیبل ہر ممبر کے ذاتی کھاتے کی تفصیل بتاتا ہے۔ چونکہ کرایہ سالوں تک رکا رہا، اس لیے شرعی اصول (طریقہ 2) کے تحت ہر ممبر کو اس کے کرائے پر <b>پلاٹ کی قدر میں اضافے (Capital Gain)</b> کے حساب سے منافع دیا گیا ہے۔<br>
+            مثال کے طور پر: اگر کسی بھائی کا کل بنیادی کرایہ ${num(s1.brotherBase.rent)} بنتا تھا، تو پلاٹ کا منافع لگنے کے بعد اسے <b>${num(s2.brotherBase.rent - s1.brotherBase.rent)}</b> روپے کا خالص فائدہ (Profit) مل رہا ہے!
+        </div>
+        <div class="tw">
+            <table class="tbl">
+                <thead>
+                    <tr>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">#</th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">ممبر کا نام</th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">بنیادی حصہ<br>(بغیر منافع)</th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">
+                            کرائے پر منافع<br>(Capital Gain)
+                            <span class="t-info" style="margin-right:5px;font-size:14px" onclick="app.showInfo('کرائے پر منافع کا حساب', 'یہ منافع اس بات پر مبنی ہے کہ جو کرایہ جس سال خادم کے پاس جمع ہوا، اس کی آج (2026) میں کیا قیمت ہے۔<br><br>پلاٹ کی قیمت 2017 سے لے کر آج تک جس رفتار سے بڑھی ہے (تقریباً 18.4 فیصد سالانہ)، کرائے کی رکی ہوئی رقم کو بھی اسی حساب سے ضرب دی گئی ہے۔<br>مثلاً: 2017 کا کرایہ جو آج تک رکا رہا، اس پر 9 سالوں کا منافع لگایا گیا ہے۔')">ℹ️</span>
+                        </th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">منافع کی شرح</th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">کل کرایہ حصہ<br>(منافع کیساتھ)</th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">پہلے سے وصول شدہ</th>
+                        <th style="background:var(--w);color:var(--g800);border-bottom:2px solid var(--gm)">نیٹ بقایا وصولی</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${memberRows}
+                </tbody>
+            </table>
+        </div>
+        <div class="table-expl">
+            <p><strong>کرائے پر منافع (Capital Gain) کیسے حساب کیا گیا؟</strong></p>
+            <p>یہ منافع اس شرعی اور منطقی اصول پر مبنی ہے کہ پیسے کی قدر وقت کے ساتھ گرتی ہے (Inflation)۔ جو کرایہ جس سال خادم کے پاس جمع ہوا، اگر اسے اسی وقت خاندانی ممبران میں تقسیم کر دیا جاتا تو وہ اسے کہیں انویسٹ کر سکتے تھے۔</p>
+            <ul>
+                <li>چونکہ کرائے کی رقم پلاٹ سے ہی آ رہی ہے، اس لیے <b>کرائے کو بھی پلاٹ ہی کا حصہ مان کر</b> اسے اسی رفتار سے بڑھایا گیا ہے جس رفتار سے پلاٹ کی قیمت بڑھی ہے۔</li>
+                <li>پلاٹ کی قیمت 2017 سے لے کر آج تک <b>تقریباً 18.4 فیصد سالانہ</b> کے حساب سے بڑھی ہے۔</li>
+                <li>اس طریقے (طریقہ 2) میں خادم کے پاس رکے ہوئے ہر سال کے کرائے کو 18.4% سالانہ کے حساب سے ضرب دے کر آج (2026) کی ویلیو نکالی گئی ہے۔ اس طرح خاندان کو ان کے رکے ہوئے پیسوں پر بہترین اور منصفانہ منافع مل رہا ہے!</li>
+                <li><b>کرائے کے اتار چڑھاؤ کا حساب:</b> ابتدائی سالوں میں کرایہ کم تھا لیکن وہ رقم زیادہ عرصے تک رکی رہی، جبکہ آخری سالوں میں کرایہ زیادہ تھا لیکن وہ کم عرصے کے لیے رکا۔ ہمارا کیلکولیٹر اوسط (Average) نکالنے کے بجائے <b>ہر سال کے کرائے کا الگ الگ کمپاؤنڈ (Compound) حساب</b> کرتا ہے۔ اس طرح کم یا زیادہ کرائے کا فرق خودکار طریقے سے بالکل درست اور 100 فیصد شفافیت کے ساتھ حل ہو جاتا ہے۔</li>
+            </ul>
+
+            <!-- Practical Example Section -->
+            <div style="background:var(--w); padding:20px; border-radius:8px; margin-top:20px; border-right:4px solid var(--gm); box-shadow:0 2px 4px rgba(0,0,0,0.05);">
+                <h4 style="color:var(--gd); margin-top:0; font-size:18px;">🧮 عملی مثال: صرف سال 2017 کے کرائے پر ایک بھائی کا منافع</h4>
+                <p>آئیے سمجھیں کہ کیلکولیٹر نے <b>صرف سال 2017</b> کے کرائے پر ایک حصہ دار بھائی (مثلاً غلام اصغر) کا منافع کس طرح نکالا (کراس ویریفکیشن کے لیے):</p>
+                
+                <div style="display:flex; flex-direction:column; gap:12px; font-family:Arial, sans-serif; direction:rtl; text-align:right; background:var(--g50); padding:20px; border-radius:6px; font-size:15px; border:1px solid var(--g200);">
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
+                        <span>1. سال 2017 کا کل کرایہ (بغیر منافع):</span>
+                        <strong style="direction:ltr;text-align:right">Rs. ${num(s2.rentByYear[0].base)}</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
+                        <span>2. ایک بھائی کا 2017 کا حصہ: <br><small style="color:var(--g400)">(کل کرایہ - والدہ کا 1/8 حصہ) ÷ 10</small></span>
+                        <strong style="direction:ltr;text-align:right">Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px;">
+                        <span>3. پلاٹ کی قدر کا منافع ملٹی پلائر (2017 تا 2026):<br><small style="color:var(--g400)">2017 میں پلاٹ کی مالیت تقریباً 93 لاکھ تھی، آج 4.25 کروڑ ہے۔ (4.25 کروڑ ÷ 93 لاکھ = 4.569)</small></span>
+                        <strong style="color:var(--gm); direction:ltr;text-align:right">x ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)}</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--g300); padding-bottom:8px; background:#fefce8; padding:10px; border-radius:6px; margin:5px 0;">
+                        <span>4. بھائی کے 2017 کے حصے کی آج (2026) میں قیمت:<br><small style="color:var(--g400)">حساب: Rs. ${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)} × ${(s2.rentByYear[0].withProfit / s2.rentByYear[0].base).toFixed(2)} ملٹی پلائر</small></span>
+                        <strong style="color:var(--blu); font-size:17px; direction:ltr;text-align:right">Rs. ${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between;">
+                        <span>5. صرف 2017 کے کرائے پر ایک بھائی کا خالص منافع (Capital Gain):</span>
+                        <strong style="color:var(--gd); direction:ltr;text-align:right">Rs. ${num(((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10) - ((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10))}</strong>
+                    </div>
+                </div>
+                
+                <p style="margin-top:15px; margin-bottom:0;">اس ایک سال کی مثال سے ثابت ہوتا ہے کہ بھائی کا <b>${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</b> روپے جو 9 سال تک رکا رہا، اب پلاٹ کے اضافے کے ساتھ بڑھ کر <b>${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</b> بن چکا ہے۔ ہمارا کیلکولیٹر اسی طرح 2018، 2019 اور ہر سال کا الگ الگ حساب کر کے تمام بھائیوں کے کھاتے مکمل شفافیت کے ساتھ کراس ویریفائی (Cross Verify) کرتا ہے۔</p>
+            </div>
+        </div>
+
     `;
 }
 
