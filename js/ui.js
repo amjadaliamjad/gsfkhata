@@ -680,20 +680,20 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                             // Family owes him 500,000 for rent. He took 7,722 cash. Family owes him: 500,000 - 7,722 = 492,278!
                             // So finalPayable = newRent + naqad! (-7,722 + 500,000 = 492,278).
                             
-                            return \`
-                            <tr style="background:\${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
-                                <td style="padding:12px;font-weight:bold;">\${i+1}. \${m.name}</td>
-                                <td class="n" style="padding:12px;">\${num(durust)}</td>
-                                <td class="n" style="padding:12px;color:#b91c1c;cursor:pointer;background:#FEF2F2;" onclick="app.showInfo('\${m.name} - کرایہ ریکارڈ', window.generateLedgerTable('\${m.id}', 'rent'))">
-                                    − \${num(rentJuma)}
+                            return `
+                            <tr style="background:${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
+                                <td style="padding:12px;font-weight:bold;">${i+1}. ${m.name}</td>
+                                <td class="n" style="padding:12px;">${num(durust)}</td>
+                                <td class="n" style="padding:12px;color:#b91c1c;cursor:pointer;background:#FEF2F2;" onclick="app.showInfo('${m.name} - کرایہ ریکارڈ', window.generateLedgerTable('${m.id}', 'rent'))">
+                                    − ${num(rentJuma)}
                                 </td>
-                                <td class="n" style="padding:12px;color:#854d0e;font-weight:bold;cursor:pointer;background:#FEFCE8;" onclick="app.showInfo('\${m.name} - نقد لین دین', window.generateLedgerTable('\${m.id}', 'cash'))">
-                                    \${num(naqad)} \${naqad < 0 ? '<br><span style="font-size:11px;font-weight:normal;">(خادم کو دینے ہیں)</span>' : ''}
+                                <td class="n" style="padding:12px;color:#854d0e;font-weight:bold;cursor:pointer;background:#FEFCE8;" onclick="app.showInfo('${m.name} - نقد لین دین', window.generateLedgerTable('${m.id}', 'cash'))">
+                                    ${num(naqad)} ${naqad < 0 ? '<br><span style="font-size:11px;font-weight:normal;">(خادم کو دینے ہیں)</span>' : ''}
                                 </td>
-                                <td class="n" style="padding:12px;color:#16a34a;">\${num(newRent)}</td>
-                                <td class="n" style="padding:12px;color:#3730a3;font-size:18px;font-weight:bold;background:#e0e7ff;">\${num(finalPayable)}</td>
+                                <td class="n" style="padding:12px;color:#16a34a;">${num(newRent)}</td>
+                                <td class="n" style="padding:12px;color:#3730a3;font-size:18px;font-weight:bold;background:#e0e7ff;">${num(finalPayable)}</td>
                             </tr>
-                            \`;
+                            `;
                         }).join('')}
                     </tbody>
                 </table>
