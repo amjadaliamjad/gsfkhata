@@ -724,15 +724,25 @@ window.generateLedgerTable = function(memberId, type) {
         return '<div style="text-align:center;padding:30px;color:#94a3b8;">اس ممبر کا کوئی ' + (type==='rent'?'کرایہ':'نقد') + ' ریکارڈ نہیں ملا</div>';
     }
 
-    let rows = filtered.map((l, i) => `
+    let totalCredit = 0;
+    let totalDebit = 0;
+    
+    let rows = filtered.map((l, i) => {
+        let cr = parseInt(String(l.credit||'0').replace(/,/g, '')) || 0;
+        let db = parseInt(String(l.debit||'0').replace(/,/g, '')) || 0;
+        totalCredit += cr;
+        totalDebit += db;
+        
+        return `
         <tr style="background:${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
             <td style="padding:10px;text-align:center;font-weight:bold;color:#64748b;">${l.id}</td>
             <td style="padding:10px;color:#475569;white-space:nowrap;">${l.date}</td>
             <td style="padding:10px;color:#1e293b;">${l.description}</td>
-            <td style="padding:10px;color:#16a34a;font-weight:bold;text-align:left;" dir="ltr">${l.credit ? num(String(l.credit).replace(/,/g, '')) : '-'}</td>
-            <td style="padding:10px;color:#dc2626;text-align:left;" dir="ltr">${l.debit ? num(String(l.debit).replace(/,/g, '')) : '-'}</td>
+            <td style="padding:10px;color:#16a34a;font-weight:bold;text-align:left;" dir="ltr">${cr ? num(cr) : '-'}</td>
+            <td style="padding:10px;color:#dc2626;text-align:left;" dir="ltr">${db ? num(db) : '-'}</td>
         </tr>
-    `).join('');
+        `;
+    }).join('');
 
     return `
     <div style="max-height: 60vh; overflow-y: auto; direction:rtl;">
@@ -749,6 +759,24 @@ window.generateLedgerTable = function(memberId, type) {
             <tbody>
                 ${rows}
             </tbody>
+            <tfoot>
+                <tr style="background:#f1f5f9; font-weight:bold; border-top:2px solid #cbd5e1;">
+                    <td colspan="3" style="padding:10px;text-align:left;">کل میزان:</td>
+                    <td style="padding:10px;color:#16a34a;text-align:left;" dir="ltr">${num(totalCredit)}</td>
+                    <td style="padding:10px;color:#dc2626;text-align:left;" dir="ltr">${num(totalDebit)}</td>
+                </tr>
+                ${type === 'cash' ? `
+                <tr style="background:#e2e8f0; font-weight:bold; font-size:15px;">
+                    <td colspan="3" style="padding:12px;text-align:left;color:#854d0e;">خالص نقد وصولی (نام ➖ جمع):</td>
+                    <td colspan="2" style="padding:12px;text-align:center;color:#854d0e;" dir="ltr">${num(totalDebit - totalCredit)}</td>
+                </tr>
+                ` : `
+                <tr style="background:#e2e8f0; font-weight:bold; font-size:15px;">
+                    <td colspan="3" style="padding:12px;text-align:left;color:#991b1b;">خالص کرایہ جمع (جمع ➖ نام):</td>
+                    <td colspan="2" style="padding:12px;text-align:center;color:#991b1b;" dir="ltr">${num(totalCredit - totalDebit)}</td>
+                </tr>
+                `}
+            </tfoot>
         </table>
     </div>
     `;
