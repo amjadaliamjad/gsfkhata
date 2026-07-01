@@ -5,7 +5,9 @@
     "page": "22",
     "debit": "3,000",
     "credit": "",
-    "balance": "3,000"
+    "balance": "3,000",
+    "id": 1,
+    "type": "cash"
   },
   {
     "date": "01/12/----",
@@ -13,7 +15,9 @@
     "page": "22",
     "debit": "4,000",
     "credit": "",
-    "balance": "7,000"
+    "balance": "7,000",
+    "id": 2,
+    "type": "cash"
   },
   {
     "date": "07/08/----",
@@ -21,7 +25,9 @@
     "page": "22",
     "debit": "23,500",
     "credit": "",
-    "balance": "30,500"
+    "balance": "30,500",
+    "id": 3,
+    "type": "cash"
   },
   {
     "date": "08/08/----",
@@ -29,7 +35,9 @@
     "page": "22",
     "debit": "20,000",
     "credit": "",
-    "balance": "50,500"
+    "balance": "50,500",
+    "id": 4,
+    "type": "cash"
   },
   {
     "date": "01/09/----",
@@ -37,7 +45,9 @@
     "page": "22",
     "debit": "3,000",
     "credit": "",
-    "balance": "53,500"
+    "balance": "53,500",
+    "id": 5,
+    "type": "cash"
   },
   {
     "date": "10/11/----",
@@ -45,7 +55,9 @@
     "page": "22",
     "debit": "2,000",
     "credit": "",
-    "balance": "55,500"
+    "balance": "55,500",
+    "id": 6,
+    "type": "cash"
   },
   {
     "date": "03/02/----",
@@ -53,7 +65,9 @@
     "page": "22",
     "debit": "1,000",
     "credit": "",
-    "balance": "56,500"
+    "balance": "56,500",
+    "id": 7,
+    "type": "cash"
   },
   {
     "date": "10/09/----",
@@ -61,7 +75,9 @@
     "page": "22",
     "debit": "50,000",
     "credit": "",
-    "balance": "106,500"
+    "balance": "106,500",
+    "id": 8,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -69,7 +85,9 @@
     "page": "22",
     "debit": "1,000",
     "credit": "",
-    "balance": "107,500"
+    "balance": "107,500",
+    "id": 9,
+    "type": "cash"
   },
   {
     "date": "27/10/----",
@@ -77,7 +95,9 @@
     "page": "22",
     "debit": "8,000",
     "credit": "",
-    "balance": "115,500"
+    "balance": "115,500",
+    "id": 10,
+    "type": "cash"
   },
   {
     "date": "28/10/----",
@@ -85,7 +105,9 @@
     "page": "22",
     "debit": "10,000",
     "credit": "",
-    "balance": "125,500"
+    "balance": "125,500",
+    "id": 11,
+    "type": "cash"
   },
   {
     "date": "18/11/----",
@@ -93,7 +115,9 @@
     "page": "22",
     "debit": "80,000",
     "credit": "",
-    "balance": "205,500"
+    "balance": "205,500",
+    "id": 12,
+    "type": "cash"
   },
   {
     "date": "02/12/----",
@@ -101,7 +125,9 @@
     "page": "22",
     "debit": "1,000",
     "credit": "",
-    "balance": "206,500"
+    "balance": "206,500",
+    "id": 13,
+    "type": "cash"
   },
   {
     "date": "16/12/----",
@@ -109,7 +135,9 @@
     "page": "22",
     "debit": "1,000",
     "credit": "",
-    "balance": "207,500"
+    "balance": "207,500",
+    "id": 14,
+    "type": "cash"
   },
   {
     "date": "21/12/----",
@@ -117,7 +145,9 @@
     "page": "22",
     "debit": "1,000",
     "credit": "",
-    "balance": "208,500"
+    "balance": "208,500",
+    "id": 15,
+    "type": "cash"
   },
   {
     "date": "02/01/----",
@@ -125,7 +155,9 @@
     "page": "22",
     "debit": "15,000",
     "credit": "",
-    "balance": "223,500"
+    "balance": "223,500",
+    "id": 16,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -133,7 +165,9 @@
     "page": "22",
     "debit": "2,560",
     "credit": "",
-    "balance": "226,060"
+    "balance": "226,060",
+    "id": 17,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -141,7 +175,9 @@
     "page": "22",
     "debit": "",
     "credit": "18,000",
-    "balance": "208,060"
+    "balance": "208,060",
+    "id": 18,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -149,7 +185,9 @@
     "page": "23",
     "debit": "",
     "credit": "50,000",
-    "balance": "158,060"
+    "balance": "158,060",
+    "id": 19,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -157,7 +195,9 @@
     "page": "23",
     "debit": "",
     "credit": "100,000",
-    "balance": "58,060"
+    "balance": "58,060",
+    "id": 20,
+    "type": "cash"
   },
   {
     "date": "10/01/----",
@@ -165,7 +205,9 @@
     "page": "23",
     "debit": "16,000",
     "credit": "",
-    "balance": "74,060"
+    "balance": "74,060",
+    "id": 21,
+    "type": "cash"
   },
   {
     "date": "12/01/----",
@@ -173,7 +215,9 @@
     "page": "23",
     "debit": "",
     "credit": "51,000",
-    "balance": "23,060"
+    "balance": "23,060",
+    "id": 22,
+    "type": "cash"
   },
   {
     "date": "30/01/----",
@@ -181,7 +225,9 @@
     "page": "23",
     "debit": "30,000",
     "credit": "",
-    "balance": "53,060"
+    "balance": "53,060",
+    "id": 23,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -189,7 +235,9 @@
     "page": "23",
     "debit": "",
     "credit": "22,800",
-    "balance": "30,260"
+    "balance": "30,260",
+    "id": 24,
+    "type": "rent"
   },
   {
     "date": "25/08/----",
@@ -197,7 +245,9 @@
     "page": "23",
     "debit": "500",
     "credit": "",
-    "balance": ""
+    "balance": "",
+    "id": 25,
+    "type": "cash"
   },
   {
     "date": "23/04/----",
@@ -205,7 +255,9 @@
     "page": "23",
     "debit": "437",
     "credit": "",
-    "balance": ""
+    "balance": "",
+    "id": 26,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -213,7 +265,9 @@
     "page": "23",
     "debit": "693",
     "credit": "",
-    "balance": ""
+    "balance": "",
+    "id": 27,
+    "type": "cash"
   },
   {
     "date": "23/04/----",
@@ -221,7 +275,9 @@
     "page": "23",
     "debit": "445",
     "credit": "",
-    "balance": ""
+    "balance": "",
+    "id": 28,
+    "type": "cash"
   },
   {
     "date": "26/09/----",
@@ -229,7 +285,9 @@
     "page": "23",
     "debit": "2,000",
     "credit": "",
-    "balance": "34,335"
+    "balance": "34,335",
+    "id": 29,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -237,7 +295,9 @@
     "page": "23",
     "debit": "",
     "credit": "15,200",
-    "balance": "19,135"
+    "balance": "19,135",
+    "id": 30,
+    "type": "rent"
   },
   {
     "date": "--/--/----",
@@ -245,7 +305,9 @@
     "page": "23",
     "debit": "",
     "credit": "7,600",
-    "balance": "11,535"
+    "balance": "11,535",
+    "id": 31,
+    "type": "rent"
   },
   {
     "date": "26/04/----",
@@ -253,7 +315,9 @@
     "page": "23",
     "debit": "7,198",
     "credit": "",
-    "balance": "18,734"
+    "balance": "18,734",
+    "id": 32,
+    "type": "cash"
   },
   {
     "date": "26/11/----",
@@ -261,7 +325,9 @@
     "page": "23",
     "debit": "1,266",
     "credit": "",
-    "balance": "20,000"
+    "balance": "20,000",
+    "id": 33,
+    "type": "cash"
   },
   {
     "date": "27/11/----",
@@ -269,7 +335,9 @@
     "page": "23",
     "debit": "460",
     "credit": "",
-    "balance": "20,460"
+    "balance": "20,460",
+    "id": 34,
+    "type": "cash"
   },
   {
     "date": "--/--/----",
@@ -277,7 +345,9 @@
     "page": "23",
     "debit": "100",
     "credit": "",
-    "balance": "20,560"
+    "balance": "20,560",
+    "id": 35,
+    "type": "cash"
   },
   {
     "date": "10/02/----",
@@ -285,7 +355,9 @@
     "page": "57",
     "debit": "260",
     "credit": "",
-    "balance": "20,760"
+    "balance": "20,760",
+    "id": 36,
+    "type": "cash"
   },
   {
     "date": "11/02/----",
@@ -293,7 +365,9 @@
     "page": "57",
     "debit": "",
     "credit": "30,000",
-    "balance": "9,240"
+    "balance": "9,240",
+    "id": 37,
+    "type": "cash"
   },
   {
     "date": "16/12/----",
@@ -301,7 +375,9 @@
     "page": "57",
     "debit": "9,900",
     "credit": "",
-    "balance": "660"
+    "balance": "660",
+    "id": 38,
+    "type": "cash"
   },
   {
     "date": "01/01/2021",
@@ -309,7 +385,9 @@
     "page": "57",
     "debit": "",
     "credit": "22,800",
-    "balance": "22,140"
+    "balance": "22,140",
+    "id": 39,
+    "type": "rent"
   },
   {
     "date": "08/04/2021",
@@ -317,7 +395,9 @@
     "page": "57",
     "debit": "2,840",
     "credit": "",
-    "balance": "19,300"
+    "balance": "19,300",
+    "id": 40,
+    "type": "cash"
   },
   {
     "date": "01/01/2022",
@@ -325,7 +405,9 @@
     "page": "57",
     "debit": "",
     "credit": "35,000",
-    "balance": ""
+    "balance": "",
+    "id": 41,
+    "type": "rent"
   },
   {
     "date": "01/01/2023",
@@ -333,7 +415,9 @@
     "page": "57",
     "debit": "",
     "credit": "45,000",
-    "balance": "99,300"
+    "balance": "99,300",
+    "id": 42,
+    "type": "rent"
   },
   {
     "date": "01/01/2017",
@@ -341,7 +425,9 @@
     "page": "57",
     "debit": "",
     "credit": "19,000",
-    "balance": "118,300"
+    "balance": "118,300",
+    "id": 43,
+    "type": "rent"
   },
   {
     "date": "22/03/2023",
@@ -349,7 +435,9 @@
     "page": "57",
     "debit": "2,222",
     "credit": "",
-    "balance": "116,078"
+    "balance": "116,078",
+    "id": 44,
+    "type": "cash"
   },
   {
     "date": "01/01/2024",
@@ -357,7 +445,9 @@
     "page": "57",
     "debit": "",
     "credit": "49,500",
-    "balance": "165,578"
+    "balance": "165,578",
+    "id": 45,
+    "type": "rent"
   },
   {
     "date": "01/01/2025",
@@ -365,7 +455,9 @@
     "page": "57",
     "debit": "",
     "credit": "54,450",
-    "balance": ""
+    "balance": "",
+    "id": 46,
+    "type": "rent"
   },
   {
     "date": "01/01/2026",
@@ -373,7 +465,9 @@
     "page": "57",
     "debit": "",
     "credit": "59,895",
-    "balance": "279,923"
+    "balance": "279,923",
+    "id": 47,
+    "type": "rent"
   },
   {
     "date": "08/06/2026",
@@ -381,6 +475,8 @@
     "page": "57",
     "debit": "2,000",
     "credit": "",
-    "balance": "277,923"
+    "balance": "277,923",
+    "id": 48,
+    "type": "cash"
   }
 ]

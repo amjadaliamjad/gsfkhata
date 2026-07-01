@@ -8,6 +8,8 @@
     "page": "1",
     "balance": "0",
     "calculatedBalance": "0",
-    "note": ""
+    "note": "",
+    "id": 1,
+    "type": "cash"
   }
 ]

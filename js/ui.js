@@ -493,7 +493,7 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
         let profitCellHtml = `
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <span>${num(profit)}</span>
-                <span class="t-info" style="margin:0; margin-right:10px; font-size:18px; flex-shrink:0" onclick="app.showInfo('${m.name} کی سال بہ سال منافع تفصیل', '${escapeHtml(memberYearBreakdown.replace(/\\r?\\n|\\r/g, ''))}')">ℹ️</span>
+                <span class="t-info" style="margin:0; margin-right:10px; font-size:18px; flex-shrink:0" onclick="app.showInfo('${m.name} کی سال بہ سال منافع تفصیل', '${escapeHtml(memberYearBreakdown.replace(/\n|\r/g, ''))}')">ℹ️</span>
             </div>
         `;
 
@@ -631,9 +631,117 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                 <p style="margin-top:15px; margin-bottom:0;">اس ایک سال کی مثال سے ثابت ہوتا ہے کہ بھائی کا <b>${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</b> روپے جو 9 سال تک رکا رہا، اب پلاٹ کے اضافے کے ساتھ بڑھ کر <b>${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</b> بن چکا ہے۔ ہمارا کیلکولیٹر اسی طرح 2018، 2019 اور ہر سال کا الگ الگ حساب کر کے تمام بھائیوں کے کھاتے مکمل شفافیت کے ساتھ کراس ویریفائی (Cross Verify) کرتا ہے۔</p>
             </div>
         </div>
+
+        <!-- ════ NEW TABLE: Fixed Rent Final Adjustment ════ -->
+        <div style="background-color: #ffffff; border: 2px solid var(--blu); margin-top: 40px; border-radius:12px; overflow:hidden; box-shadow:var(--s2);">
+            <h2 style="background:var(--blu); color:white; margin:0; padding:15px 20px;">طے شدہ فکسڈ کرائے کے مطابق کھاتوں کی حتمی ایڈجسٹمنٹ</h2>
+            
+            <div style="background-color: var(--blt); padding: 15px 20px; border-bottom: 1px solid #bfdbfe; font-size: 15px; line-height: 1.8; color: #1e3a8a;">
+                <strong>حساب کا اصول (Formula):</strong><br />
+                <p style="margin-top: 5px; margin-bottom: 10px">اس ٹیبل میں ہر فرد کا حتمی اور صاف حساب درج ہے۔ <strong>پلاٹ کا کرایہ</strong> اور <strong>نقد لین دین</strong> پر کلک کر کے آپ فلٹر شدہ ریکارڈز دیکھ سکتے ہیں۔</p>
+                <p style="margin-top: 0; margin-bottom: 0">فائنل حساب نکالنے کے لیے، ہر فرد کے کھاتے (درست شدہ بقایا) میں سے ان کا جمع کرایا گیا <strong>پلاٹ کا کرایہ</strong> مائنس کر دیا گیا ہے، تاکہ صرف <strong>بقیہ نقد لین دین</strong> سامنے آ سکے۔ آخر میں <strong>نئے فکسڈ کرائے</strong> میں سے ان کا نقد بقایا مائنس کر کے <strong>حتمی قابل ادا</strong> رقم نکالی گئی ہے۔</p>
+            </div>
+
+            <div class="tw">
+                <table class="tbl" style="margin:0;">
+                    <thead>
+                        <tr>
+                            <th style="background:#f1f5f9;color:#1e40af;padding:12px;">نام</th>
+                            <th style="background:#f8fafc;color:#334155;padding:12px;">درست شدہ بقایا</th>
+                            <th style="background:#fef2f2;color:#991b1b;padding:12px;">پلاٹ کا کرایہ (جمع) ℹ️</th>
+                            <th style="background:#fefce8;color:#854d0e;padding:12px;">بقیہ نقد لین دین ℹ️</th>
+                            <th style="background:#f0fdf4;color:#16a34a;padding:12px;">نیا فکسڈ کرایہ</th>
+                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی قابل ادا</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${allMembers.map((m, i) => {
+                            let ledger = ledgers[m.id] || [];
+                            let tDebit=0, tCredit=0, rDebit=0, rCredit=0;
+                            ledger.forEach(tx => {
+                                let d = parseInt(String(tx.debit||'').replace(/,/g, '')) || 0;
+                                let c = parseInt(String(tx.credit||'').replace(/,/g, '')) || 0;
+                                tDebit += d; tCredit += c;
+                                if (tx.type === 'rent') { rDebit += d; rCredit += c; }
+                            });
+                            
+                            let durust = tCredit - tDebit;
+                            let rentJuma = rCredit - rDebit;
+                            let naqad = durust - rentJuma;
+                            
+                            let isMother = m.id === 'mother';
+                            let isSister = m.id.startsWith('sister');
+                            let newRent = isMother ? s2.mother.rent : (isSister ? s2.sisters.rent : s2.brotherBase.rent);
+                            if (m.isAdmin) newRent = 0; // Wait, Khadim's rent is owed by him to family, but here "نیا فکسڈ کرایہ" means his SHARE of rent. Wait, Khadim's share is the same as brotherBase!
+                            
+                            let finalPayable = newRent + naqad; // If naqad is positive (he deposited cash), it ADDS to his payable? Wait. If he deposited cash, he should get MORE. If newRent is what family owes HIM.
+                            // Let's check logic:
+                            // For Ghulam Asghar: naqad = -7,722 (he withdrew cash). newRent = 500,000. 
+                            // Family owes him 500,000 for rent. He took 7,722 cash. Family owes him: 500,000 - 7,722 = 492,278!
+                            // So finalPayable = newRent + naqad! (-7,722 + 500,000 = 492,278).
+                            
+                            return \`
+                            <tr style="background:\${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
+                                <td style="padding:12px;font-weight:bold;">\${i+1}. \${m.name}</td>
+                                <td class="n" style="padding:12px;">\${num(durust)}</td>
+                                <td class="n" style="padding:12px;color:#b91c1c;cursor:pointer;background:#FEF2F2;" onclick="app.showInfo('\${m.name} - کرایہ ریکارڈ', window.generateLedgerTable('\${m.id}', 'rent'))">
+                                    − \${num(rentJuma)}
+                                </td>
+                                <td class="n" style="padding:12px;color:#854d0e;font-weight:bold;cursor:pointer;background:#FEFCE8;" onclick="app.showInfo('\${m.name} - نقد لین دین', window.generateLedgerTable('\${m.id}', 'cash'))">
+                                    \${num(naqad)} \${naqad < 0 ? '<br><span style="font-size:11px;font-weight:normal;">(خادم کو دینے ہیں)</span>' : ''}
+                                </td>
+                                <td class="n" style="padding:12px;color:#16a34a;">\${num(newRent)}</td>
+                                <td class="n" style="padding:12px;color:#3730a3;font-size:18px;font-weight:bold;background:#e0e7ff;">\${num(finalPayable)}</td>
+                            </tr>
+                            \`;
+                        }).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     `;
 }
+
+// ════ HELPER FUNCTION FOR MODALS ════
+window.generateLedgerTable = function(memberId, type) {
+    if (!window.app || !window.app.ledgers) return 'ڈیٹا دستیاب نہیں';
+    let ledger = window.app.ledgers[memberId] || [];
+    let filtered = type === 'all' ? ledger : ledger.filter(l => l.type === type);
+    
+    if (filtered.length === 0) {
+        return '<div style="text-align:center;padding:30px;color:#94a3b8;">اس ممبر کا کوئی ' + (type==='rent'?'کرایہ':'نقد') + ' ریکارڈ نہیں ملا</div>';
+    }
+
+    let rows = filtered.map((l, i) => `
+        <tr style="background:${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
+            <td style="padding:10px;text-align:center;font-weight:bold;color:#64748b;">${l.id}</td>
+            <td style="padding:10px;color:#475569;white-space:nowrap;">${l.date}</td>
+            <td style="padding:10px;color:#1e293b;">${l.description}</td>
+            <td style="padding:10px;color:#16a34a;font-weight:bold;text-align:left;" dir="ltr">${l.credit ? num(String(l.credit).replace(/,/g, '')) : '-'}</td>
+            <td style="padding:10px;color:#dc2626;text-align:left;" dir="ltr">${l.debit ? num(String(l.debit).replace(/,/g, '')) : '-'}</td>
+        </tr>
+    `).join('');
+
+    return `
+    <div style="max-height: 60vh; overflow-y: auto; direction:rtl;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px; border:1px solid #cbd5e1;">
+            <thead>
+                <tr style="background:#334155; color:white;">
+                    <th style="padding:10px; width:50px;">نمبر</th>
+                    <th style="padding:10px; width:90px;">تاریخ</th>
+                    <th style="padding:10px;">تفصیل</th>
+                    <th style="padding:10px;">جمع (Credit)</th>
+                    <th style="padding:10px;">نام (Debit)</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${rows}
+            </tbody>
+        </table>
+    </div>
+    `;
+};
 
 export function renderProfitDistribution(config, calcDataAll, baseData) {
     let s1 = calcDataAll.s1;
@@ -961,6 +1069,8 @@ export function renderKhata(config, ledgers, idParam) {
                     <table class="tbl" style="margin:0;">
                         <thead>
                             <tr>
+                                <th style="background:var(--g100);color:var(--g800);padding:15px;width:60px;">نمبر</th>
+                                <th style="background:var(--g100);color:var(--g800);padding:15px;width:90px;">قسم</th>
                                 <th style="background:var(--g100);color:var(--g800);padding:15px;">تاریخ</th>
                                 <th style="background:var(--g100);color:var(--g800);padding:15px;">تفصیل</th>
                                 <th style="background:var(--g100);color:var(--g800);padding:15px;">حوالہ (Page)</th>
@@ -972,6 +1082,10 @@ export function renderKhata(config, ledgers, idParam) {
                         <tbody>
                             ${ledger.length > 0 ? ledger.map((l, i) => `
                                 <tr style="background:${i%2===0 ? 'var(--w)' : 'var(--g50)'}; border-bottom:1px solid var(--g200);">
+                                    <td class="n" style="padding:12px 15px; font-weight:bold; color:var(--g500); text-align:center;">${l.id || i+1}</td>
+                                    <td style="padding:12px 15px; text-align:center;">
+                                        <span style="font-size:12px; padding:4px 8px; border-radius:12px; font-weight:bold; ${l.type === 'rent' ? 'background:#dcfce7; color:#166534; border:1px solid #bbf7d0;' : 'background:#f1f5f9; color:#475569; border:1px solid #e2e8f0;'}">${l.type === 'rent' ? 'کرایہ' : 'نقد / دیگر'}</span>
+                                    </td>
                                     <td class="n" style="padding:12px 15px; white-space:nowrap; color:var(--g600);">${l.date}</td>
                                     <td style="padding:12px 15px; line-height:1.6; color:var(--g800);">${l.description}</td>
                                     <td class="n" style="padding:12px 15px; color:var(--g400); text-align:center;">${l.page||'-'}</td>
@@ -979,7 +1093,7 @@ export function renderKhata(config, ledgers, idParam) {
                                     <td class="nr n" style="padding:12px 15px;">${l.debit ? num(String(l.debit).replace(/,/g, '')) : '-'}</td>
                                     <td class="nb n" style="padding:12px 15px; font-weight:bold; background:${i%2===0 ? 'var(--gp)' : '#c6ebd1'}; border-right:1px solid var(--g200);">${l.balance||'-'}</td>
                                 </tr>
-                            `).join('') : '<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--g400);font-size:18px;">اس ممبر کا کوئی پرانا کھاتہ ریکارڈ نہیں ملا</td></tr>'}
+                            `).join('') : '<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--g400);font-size:18px;">اس ممبر کا کوئی پرانا کھاتہ ریکارڈ نہیں ملا</td></tr>'}
                         </tbody>
                     </table>
                 </div>

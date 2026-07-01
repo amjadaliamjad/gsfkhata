@@ -23,7 +23,7 @@
 <div class="mobile-nav-overlay" id="overlay" onclick="app.closeMenu()"></div>
 <div class="mobile-nav-menu" id="mobile-menu">
     <button class="close-nav" onclick="app.closeMenu()">✕</button>
-    <div style="padding: 20px; color: var(--gd); font-size: 22px; font-weight: bold; border-bottom: 1px solid var(--g200); margin-bottom: 10px; text-align:center;">
+    <div style="padding: 20px; color: var(--gd); font-size: 22px; font-weight: bold; border-bottom: 1px solid var(--g200); margin-bottom: 10px; text-align:center; cursor:pointer;" onclick="location.hash='#dash'; app.closeMenu();">
         <img src="images/TaibaLogoMobile.jpg" style="max-width:80%; height:auto; mix-blend-mode:multiply; margin-bottom:15px; border-radius:8px;">
         <br>غلام سرور فیملی کھاتہ (Ledger)
     </div>
@@ -36,7 +36,7 @@
 <!-- ════ TOP NAVBAR ════ -->
 <nav class="navbar">
     <div class="nav-in">
-        <div class="nav-brand">
+        <div class="nav-brand" style="cursor:pointer;" onclick="location.hash='#dash'">
             <img src="images/TaibaLogoMobile.jpg" style="height:48px; border-radius:6px; mix-blend-mode:multiply;">
             غلام سرور فیملی کھاتہ (Ledger)
         </div>
