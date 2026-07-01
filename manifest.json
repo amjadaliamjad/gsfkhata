@@ -8,9 +8,16 @@
   "description": "Ghulam Sarwar Family Khata & Ledger Application",
   "icons": [
     {
-      "src": "images/TaibaLogoMobile.jpg",
+      "src": "images/TaibaLogoMobile.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/TaibaLogoMobile.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
