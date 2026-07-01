@@ -27,6 +27,20 @@ class App {
                 } catch(e) {
                     this.ledgers[m.id] = [];
                 }
+                
+                // Dynamically calculate cashWithdrawn from ledger and inject into config
+                let ledger = this.ledgers[m.id] || [];
+                let tDebit=0, tCredit=0, rDebit=0, rCredit=0;
+                ledger.forEach(tx => {
+                    let d = parseInt(String(tx.debit||'').replace(/,/g, '')) || 0;
+                    let c = parseInt(String(tx.credit||'').replace(/,/g, '')) || 0;
+                    tDebit += d; tCredit += c;
+                    if (tx.type === 'rent') { rDebit += d; rCredit += c; }
+                });
+                let durust = tCredit - tDebit;
+                let rentJuma = rCredit - rDebit;
+                let cashWithdrawn = rentJuma - durust;
+                m.receivedRent = cashWithdrawn;
             }
 
             this.calculations = calculateScenarios(this.config);

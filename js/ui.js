@@ -43,7 +43,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
     femaleMembers.forEach(f => {
         const isMother = f.id === 'mother';
         const plot = isMother ? calcData.mother.plot : calcData.sisters.plot;
-        const rentOwedToThem = isMother ? calcData.mother.rent : calcData.sisters.rent;
+        const rentOwedToThem = (isMother ? calcData.mother.rent : calcData.sisters.rent) - (f.receivedRent || 0);
         const landPayment = 0; // Females don't pay for the land
         const net = plot + rentOwedToThem;
         const cls = isMother ? 'mother-card' : 'sister';
@@ -83,7 +83,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
     femaleMembers.forEach(f => {
         const isMother = f.id === 'mother';
         const plot = isMother ? calcData2.mother.plot : calcData2.sisters.plot;
-        const rentOwedToThem = isMother ? calcData2.mother.rent : calcData2.sisters.rent;
+        const rentOwedToThem = (isMother ? calcData2.mother.rent : calcData2.sisters.rent) - (f.receivedRent || 0);
         const landPayment = 0; 
         const net = plot + rentOwedToThem;
         const cls = isMother ? 'mother-card' : 'sister';
@@ -92,7 +92,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
             <div class="mem-name">${f.name}</div>
             <div class="mem-role" style="text-align:left">${isMother ? 'والدہ محترمہ' : 'حصہ دار بہن'}</div>
             <div class="mem-row"><span class="lbl">پلاٹ حصہ</span><span class="val val-plot">${num(plot)}</span></div>
-            <div class="mem-row"><span class="lbl">بقایا کرایہ</span><span class="val" style="color:var(--g800)">${num(rentOwedToThem)}+</span></div>
+            <div class="mem-row"><span class="lbl">بقایا کرایہ (منافع کیساتھ)</span><span class="val" style="color:var(--g800)">${num(rentOwedToThem)}+</span></div>
             <div class="mem-row"><span class="lbl">زمین ادائیگی</span><span class="val" style="color:var(--g800)">—</span></div>
             <div class="mem-row" style="margin-top:15px; border:none;"><span class="lbl" style="font-weight:bold;color:var(--gd);">خالص رقم</span><span class="val val-net">${num(net)}</span></div>
         </div>`;
@@ -533,7 +533,7 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
     });
 
     memberRows += `
-        <tr style="background:var(--gd); color:white; font-size:16px; font-weight:bold;">
+        <tr class="tot" style="background:var(--gd)!important; color:white!important; font-size:16px; font-weight:bold;">
             <td colspan="2" style="padding:12px; text-align:right;">کل مجموعہ</td>
             <td class="n" style="padding:12px;">${num(sumBaseAdjusted)}</td>
             <td class="n" style="padding:12px;">${num(sumProfit)}</td>
@@ -677,7 +677,7 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
         }).join('');
         
         return rows + `
-            <tr style="background:var(--gd); color:white; font-size:16px; font-weight:bold;">
+            <tr class="tot" style="background:var(--gd)!important; color:white!important; font-size:16px; font-weight:bold;">
                 <td style="padding:12px; text-align:right;">کل مجموعہ</td>
                 <td class="n" style="padding:12px;">${num(sumA)}</td>
                 <td class="n" style="padding:12px;">${num(sumB)}</td>

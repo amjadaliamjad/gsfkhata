@@ -30,10 +30,10 @@ export function calculateScenarios(config) {
     // --- AGGREGATES FOR DASHBOARD ---
     const totalMembers = 12; // 9 brothers, 2 sisters, 1 mother
     let totalReceivedRent = 0;
-    config.family.brothers.forEach(b => {
-        totalReceivedRent += b.receivedRent || 0;
+    const allMembers = [...config.family.brothers, ...config.family.sisters, config.family.mother];
+    allMembers.forEach(m => {
+        totalReceivedRent += m.receivedRent || 0;
     });
-    // Add sisters/mother if they received anything (assuming 0 for now based on config)
     const totalPendingRent = totalRent - totalReceivedRent;
 
     // Khadim special payment: e.g. Khadim's rent + the 6 kanal land price? 
