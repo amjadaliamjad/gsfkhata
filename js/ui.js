@@ -1304,10 +1304,10 @@ export function renderAgriculture(config, calcDataAll) {
                 </thead>
                 <tbody>
                     ${opt1Rows}
-                    <tr style="background:var(--pur); color:white; font-weight:bold;">
-                        <td style="padding:10px;">کل ٹوٹل</td>
-                        <td class="n" style="padding:10px; font-size:18px;">${num(agri.totalOpt1)}</td>
-                        <td>-</td>
+                    <tr class="tot" style="background:var(--pur)!important; color:white!important; font-weight:bold;">
+                        <td style="padding:10px; background:var(--pur)!important; color:white!important;">کل ٹوٹل</td>
+                        <td class="n" style="padding:10px; font-size:18px; background:var(--pur)!important; color:white!important;">${num(agri.totalOpt1)}</td>
+                        <td style="background:var(--pur)!important; color:white!important;">-</td>
                     </tr>
                 </tbody>
             </table>
@@ -1337,10 +1337,10 @@ export function renderAgriculture(config, calcDataAll) {
                 </thead>
                 <tbody>
                     ${opt2Rows}
-                    <tr style="background:var(--gm); color:white; font-weight:bold;">
-                        <td style="padding:10px;">کل ٹوٹل</td>
-                        <td class="n" style="padding:10px; font-size:18px;">${num(agri.totalOpt2)}</td>
-                        <td>-</td>
+                    <tr class="tot" style="background:var(--gm)!important; color:white!important; font-weight:bold;">
+                        <td style="padding:10px; background:var(--gm)!important; color:white!important;">کل ٹوٹل</td>
+                        <td class="n" style="padding:10px; font-size:18px; background:var(--gm)!important; color:white!important;">${num(agri.totalOpt2)}</td>
+                        <td style="background:var(--gm)!important; color:white!important;">-</td>
                     </tr>
                 </tbody>
             </table>
