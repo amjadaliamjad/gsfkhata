@@ -528,6 +528,16 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
         `;
     });
 
+    memberRows += `
+        <tr style="background:var(--gd); color:white; font-size:16px; font-weight:bold;">
+            <td colspan="2" style="padding:12px; text-align:right;">کل مجموعہ</td>
+            <td class="n" style="padding:12px;">${num(sumBaseAdjusted)}</td>
+            <td class="n" style="padding:12px;">${num(sumProfit)}</td>
+            <td class="n" style="padding:12px;">-</td>
+            <td class="n" style="padding:12px; font-size:18px;">${num(sumTotalRemaining)}</td>
+        </tr>
+    `;
+
     return `
     <!-- Top General Explanation Box -->
     <div class="card-ex" style="background:#F3E8FF;border-color:var(--pur)">
