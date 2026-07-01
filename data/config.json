@@ -14,6 +14,26 @@
     "agreedSixCanalPrice": 3375000,
     "useMarketRate": false
   },
+  "agriculture": {
+    "totalAcres": 7,
+    "kanalsPerAcre": 8,
+    "baseRatePerAcre2016": 50000,
+    "annualIncrementPercent": 15,
+    "startYear": 2016,
+    "endYear": 2026,
+    "cultivators": {
+      "period1": {
+        "start": 2016,
+        "end": 2020,
+        "brothers": ["ghulam_akbar", "abid_hussain", "abdul_qayyum"]
+      },
+      "period2": {
+        "start": 2021,
+        "end": 2026,
+        "brothers": ["abid_hussain"]
+      }
+    }
+  },
   "rent": {
     "years": [
       { "year": 2017, "monthly": 19000, "months": 12 },

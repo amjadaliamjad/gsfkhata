@@ -90,6 +90,50 @@ export function calculateScenarios(config) {
         landPerBrother
     };
 
+    // --- Agriculture Lease Math ---
+    const A = config.agriculture;
+    let agri = { years: [], totalOpt1: 0, totalOpt2: 0 };
+    if (A) {
+        let currentRate = A.baseRatePerAcre2016;
+        let yearlyData = [];
+        let totalOpt1 = 0;
+        let totalOpt2 = 0;
+
+        let khadimOpt1Kanals = 10.9;
+        let khadimOpt2Kanals = 4.9;
+
+        for (let y = A.startYear; y <= A.endYear; y++) {
+            let ratePerKanal = Math.round(currentRate / A.kanalsPerAcre);
+            let opt1Amount = Math.round(khadimOpt1Kanals * ratePerKanal);
+            let opt2Amount = Math.round(khadimOpt2Kanals * ratePerKanal);
+            
+            totalOpt1 += opt1Amount;
+            totalOpt2 += opt2Amount;
+
+            let cultivators = "";
+            if (y >= A.cultivators.period1.start && y <= A.cultivators.period1.end) {
+                cultivators = "غلام اکبر، عابد حسین، عبدالقیوم";
+            } else if (y >= A.cultivators.period2.start && y <= A.cultivators.period2.end) {
+                cultivators = "عابد حسین";
+            }
+
+            yearlyData.push({
+                year: y,
+                ratePerAcre: currentRate,
+                ratePerKanal: ratePerKanal,
+                khadimAmountOpt1: opt1Amount,
+                khadimAmountOpt2: opt2Amount,
+                cultivators: cultivators
+            });
+
+            currentRate = Math.round(currentRate * (1 + (A.annualIncrementPercent/100)));
+        }
+        
+        agri.years = yearlyData;
+        agri.totalOpt1 = totalOpt1;
+        agri.totalOpt2 = totalOpt2;
+    }
+
     return {
         base: { 
             totalRent, 
@@ -102,6 +146,7 @@ export function calculateScenarios(config) {
             specialPaymentToKhadim
         },
         s1: scenario1,
-        s2: scenario2
+        s2: scenario2,
+        agri: agri
     };
 }

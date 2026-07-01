@@ -70,6 +70,8 @@ class App {
             container.innerHTML = UI.renderRent(this.config, this.calculations, this.calculations.base, this.ledgers);
         } else if (this.currentView === 'profit') {
             container.innerHTML = UI.renderProfitDistribution(this.config, this.calculations, this.calculations.base);
+        } else if (this.currentView === 'agri') {
+            container.innerHTML = UI.renderAgriculture(this.config, this.calculations);
         } else if (this.currentView.startsWith('khata')) {
             container.innerHTML = UI.renderKhata(this.config, this.ledgers, this.viewParam);
         } else {
