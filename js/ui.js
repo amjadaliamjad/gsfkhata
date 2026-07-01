@@ -402,6 +402,7 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
     // --- Second Table: Members Rent Detail ---
     let allMembers = [...config.family.brothers, ...config.family.sisters, config.family.mother];
     let memberRows = '';
+    let sumBaseAdjusted = 0, sumProfit = 0, sumTotalRemaining = 0;
 
     allMembers.forEach((m, idx) => {
         const isMother = m.id === 'mother';
@@ -526,6 +527,9 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
             <td class="n" style="font-weight:bold;color:${m.isAdmin?'var(--g800)':'var(--gd)'}; font-size:16px;">${m.isAdmin ? '—' : num(totalRemaining)}</td>
         </tr>
         `;
+            sumBaseAdjusted += (m.isAdmin ? 0 : finalPayableBase);
+        sumProfit += profit;
+        sumTotalRemaining += (m.isAdmin ? 0 : totalRemaining);
     });
 
     memberRows += `
