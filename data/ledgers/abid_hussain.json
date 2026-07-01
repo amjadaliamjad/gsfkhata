@@ -1,0 +1,258 @@
+[
+  {
+    "date": "01/01/2012",
+    "description": "1/1 کرایہ ایک سال 12 ماہ کا",
+    "page": "48",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "22,800"
+  },
+  {
+    "date": "01/01/2013",
+    "description": "1/1 کرایہ ایک سال 12 ماہ کا",
+    "page": "48",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "45,600"
+  },
+  {
+    "date": "--/--/----",
+    "description": "امان اللہ سے وصول پایا",
+    "page": "48",
+    "debit": "10,500",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "عبدالقیوم سے وصول پائے خادم حسین",
+    "page": "48",
+    "debit": "24,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "داخلہ فیس امان اللہ",
+    "page": "48",
+    "debit": "300",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "داخلہ فیس",
+    "page": "48",
+    "debit": "4,560",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "23/04/2018",
+    "description": "پراپرٹی ٹیکس",
+    "page": "48",
+    "debit": "437",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "سیوریج بنوائی شاھد",
+    "page": "48",
+    "debit": "693",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "وکیل فیس پلاٹ ٹرانسفر",
+    "page": "48",
+    "debit": "2,500",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "23/04/2019",
+    "description": "پراپرٹی ٹیکس",
+    "page": "48",
+    "debit": "445",
+    "credit": "",
+    "balance": "23,825"
+  },
+  {
+    "date": "26/04/2019",
+    "description": "امان اللہ کا بجلی کا بل ایک سال کا",
+    "page": "48",
+    "debit": "7,198",
+    "credit": "",
+    "balance": "16,627"
+  },
+  {
+    "date": "--/--/----",
+    "description": "فیس پراپرٹی",
+    "page": "48",
+    "debit": "460",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "رپورٹ CBC",
+    "page": "48",
+    "debit": "100",
+    "credit": "",
+    "balance": "16,067"
+  },
+  {
+    "date": "10/02/2020",
+    "description": "وکیل کی فیس صفدر والی",
+    "page": "48",
+    "debit": "200",
+    "credit": "",
+    "balance": "15,867"
+  },
+  {
+    "date": "13/02/2020",
+    "description": "امان اللہ نقد کیش",
+    "page": "48",
+    "debit": "3,000",
+    "credit": "",
+    "balance": "12,867"
+  },
+  {
+    "date": "14/02/2020",
+    "description": "موبائل اکاؤنٹ میں کروائے",
+    "page": "48",
+    "debit": "4,000",
+    "credit": "",
+    "balance": "8,867"
+  },
+  {
+    "date": "18/02/2020",
+    "description": "نقد کیش وصول پائے امان اللہ",
+    "page": "48",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "6,867"
+  },
+  {
+    "date": "01/01/2020",
+    "description": "2020 کا کرایہ",
+    "page": "48",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "29,667"
+  },
+  {
+    "date": "--/--/----",
+    "description": "امان اللہ نقد کیش",
+    "page": "49",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "27,667"
+  },
+  {
+    "date": "01/01/2021",
+    "description": "ایک سال کا کرایہ 2021 کا",
+    "page": "49",
+    "debit": "",
+    "credit": "35,000",
+    "balance": "62,667"
+  },
+  {
+    "date": "01/01/2022",
+    "description": "ایک سال کا کرایہ 2022 کا",
+    "page": "49",
+    "debit": "",
+    "credit": "45,000",
+    "balance": "107,667"
+  },
+  {
+    "date": "01/01/2017",
+    "description": "ایک سال کا کرایہ 2017 کا",
+    "page": "49",
+    "debit": "",
+    "credit": "19,000",
+    "balance": "126,667"
+  },
+  {
+    "date": "19/05/2018",
+    "description": "کرایہ وصول قلندری سے",
+    "page": "49",
+    "debit": "22,800",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "13/07/2020",
+    "description": "بجلی کے بل کے لیے قلندری سے",
+    "page": "49",
+    "debit": "7,000",
+    "credit": "",
+    "balance": "96,867"
+  },
+  {
+    "date": "21/10/2023",
+    "description": "موبائل اکاؤنٹ ہسپتال بیگم داخل تھی",
+    "page": "49",
+    "debit": "15,000",
+    "credit": "",
+    "balance": "81,867"
+  },
+  {
+    "date": "22/03/2023",
+    "description": "گھر کی دیوار کروائی قلندری نے",
+    "page": "49",
+    "debit": "2,222",
+    "credit": "",
+    "balance": "79,645"
+  },
+  {
+    "date": "01/01/2023",
+    "description": "ایک سال کا کرایہ 2023 کا",
+    "page": "49",
+    "debit": "",
+    "credit": "49,500",
+    "balance": "129,145"
+  },
+  {
+    "date": "--/--/----",
+    "description": "موبائل اکاؤنٹ بہاولپور چیک پر",
+    "page": "49",
+    "debit": "5,000",
+    "credit": "",
+    "balance": "124,145"
+  },
+  {
+    "date": "01/01/2024",
+    "description": "ایک سال کرایہ 2024 کا",
+    "page": "49",
+    "debit": "",
+    "credit": "54,450",
+    "balance": ""
+  },
+  {
+    "date": "01/01/2025",
+    "description": "ایک سال کا کرایہ 2025 کا",
+    "page": "49",
+    "debit": "",
+    "credit": "59,895",
+    "balance": "238,490"
+  },
+  {
+    "date": "17/05/2026",
+    "description": "پراپرٹی ٹیکس",
+    "page": "49",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "236,490"
+  },
+  {
+    "date": "10/06/2026",
+    "description": "چاول چونا سیمنٹ منگوایا",
+    "page": "49",
+    "debit": "",
+    "credit": "22,500",
+    "balance": "258,990"
+  }
+]

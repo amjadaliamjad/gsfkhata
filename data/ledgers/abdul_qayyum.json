@@ -1,0 +1,138 @@
+[
+  {
+    "date": "01/01/2018",
+    "description": "ایک سال کا کرایہ 2018 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "22,800"
+  },
+  {
+    "date": "01/01/2019",
+    "description": "ایک سال کا کرایہ 2019 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "45,600"
+  },
+  {
+    "date": "--/--/----",
+    "description": "پراپرٹی ٹیکس فیس سال کا",
+    "page": "51",
+    "debit": "882",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "خرچہ سیوریج بنوائی شاھد نے",
+    "page": "51",
+    "debit": "693",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "26/09/----",
+    "description": "فیس وکیل ٹرانسفر",
+    "page": "51",
+    "debit": "2,500",
+    "credit": "",
+    "balance": "41,525"
+  },
+  {
+    "date": "27/09/----",
+    "description": "پراپرٹی ٹیکس",
+    "page": "51",
+    "debit": "460",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "رپورٹ CBC",
+    "page": "51",
+    "debit": "100",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "10/02/2020",
+    "description": "وکیل کی فیس صفدر والی",
+    "page": "51",
+    "debit": "200",
+    "credit": "",
+    "balance": "40,765"
+  },
+  {
+    "date": "01/01/2020",
+    "description": "ایک سال کا کرایہ",
+    "page": "51",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "63,565"
+  },
+  {
+    "date": "01/01/2021",
+    "description": "ایک سال کا کرایہ 2021 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "35,000",
+    "balance": ""
+  },
+  {
+    "date": "01/01/2022",
+    "description": "ایک سال کا کرایہ 2022 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "45,000",
+    "balance": "143,565"
+  },
+  {
+    "date": "01/01/2017",
+    "description": "ایک سال کا کرایہ 2017 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "19,000",
+    "balance": "162,565"
+  },
+  {
+    "date": "22/03/2023",
+    "description": "گھر کی دیوار کروائی",
+    "page": "51",
+    "debit": "2,222",
+    "credit": "",
+    "balance": "160,343"
+  },
+  {
+    "date": "01/01/2023",
+    "description": "ایک سال کا کرایہ 2023 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "49,500",
+    "balance": "209,843"
+  },
+  {
+    "date": "08/12/----",
+    "description": "نقد عبدالقیوم کو دیا غلام فاروق",
+    "page": "51",
+    "debit": "5,000",
+    "credit": "",
+    "balance": "204,843"
+  },
+  {
+    "date": "01/01/2024",
+    "description": "ایک سال کا کرایہ 2024 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "54,450",
+    "balance": ""
+  },
+  {
+    "date": "01/01/2025",
+    "description": "ایک سال کا کرایہ 2025 کا",
+    "page": "51",
+    "debit": "",
+    "credit": "59,895",
+    "balance": "319,188"
+  }
+]

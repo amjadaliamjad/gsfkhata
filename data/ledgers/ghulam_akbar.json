@@ -1,0 +1,186 @@
+[
+  {
+    "date": "07/01/2012",
+    "description": "اون لائن بینک میں جمع",
+    "page": "102",
+    "debit": "50,000",
+    "credit": "",
+    "balance": "50,000"
+  },
+  {
+    "date": "01/01/2017",
+    "description": "کرایہ 1/2 آدھا سال کا 17 کا",
+    "page": "102",
+    "debit": "",
+    "credit": "19,000",
+    "balance": "31,000"
+  },
+  {
+    "date": "--/--/----",
+    "description": "پلاٹ ٹرانسفر فیس",
+    "page": "102",
+    "debit": "500",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "سیوریج بنوائی فیس",
+    "page": "102",
+    "debit": "693",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "23/04/2018",
+    "description": "پراپرٹی ٹیکس",
+    "page": "102",
+    "debit": "437",
+    "credit": "",
+    "balance": "32,630"
+  },
+  {
+    "date": "01/01/2018",
+    "description": "ایک سال کا کرایہ",
+    "page": "102",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "9,830"
+  },
+  {
+    "date": "26/09/2019",
+    "description": "وکیل کی فیس ٹرانسفر",
+    "page": "102",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "11,830"
+  },
+  {
+    "date": "01/01/2019",
+    "description": "ایک سال کا کرایہ",
+    "page": "102",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "10,970"
+  },
+  {
+    "date": "27/09/2019",
+    "description": "پراپرٹی ٹیکس",
+    "page": "102",
+    "debit": "445",
+    "credit": "",
+    "balance": "10,525"
+  },
+  {
+    "date": "15/11/2019",
+    "description": "غلام اکبر سے وصول",
+    "page": "102",
+    "debit": "",
+    "credit": "350,000",
+    "balance": "360,525"
+  },
+  {
+    "date": "--/--/----",
+    "description": "مشتاق علی کو نقد کیش دیا",
+    "page": "102",
+    "debit": "370,000",
+    "credit": "",
+    "balance": "9,475"
+  },
+  {
+    "date": "10/02/2020",
+    "description": "وکیل کی فیس صفدر والی",
+    "page": "102",
+    "debit": "200",
+    "credit": "",
+    "balance": "9,675"
+  },
+  {
+    "date": "01/01/2020",
+    "description": "ایک سال کا کرایہ",
+    "page": "102",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "13,125"
+  },
+  {
+    "date": "05/02/2020",
+    "description": "شاہد علی کو دیا",
+    "page": "102",
+    "debit": "30,000",
+    "credit": "",
+    "balance": "16,875"
+  },
+  {
+    "date": "--/--/----",
+    "description": "غلام اکبر کو پے ارڈر دیا",
+    "page": "102",
+    "debit": "",
+    "credit": "50,000",
+    "balance": "33,125"
+  },
+  {
+    "date": "01/01/2021",
+    "description": "ایک سال کا کرایہ",
+    "page": "102",
+    "debit": "",
+    "credit": "35,000",
+    "balance": "68,125"
+  },
+  {
+    "date": "22/11/2022",
+    "description": "فریج بلٹی کروائی",
+    "page": "102",
+    "debit": "22,000",
+    "credit": "",
+    "balance": "46,125"
+  },
+  {
+    "date": "--/--/----",
+    "description": "پچھلے صفحے کا بقایا لایا گیا",
+    "page": "103",
+    "debit": "",
+    "credit": "",
+    "balance": "46,125"
+  },
+  {
+    "date": "22/03/2023",
+    "description": "گھر کی دیوار کروائی قلندری نے",
+    "page": "103",
+    "debit": "2,222",
+    "credit": "",
+    "balance": "43,903"
+  },
+  {
+    "date": "01/01/2023",
+    "description": "ایک سال کا کرایہ",
+    "page": "103",
+    "debit": "",
+    "credit": "49,500",
+    "balance": ""
+  },
+  {
+    "date": "01/01/2024",
+    "description": "ایک سال کا کرایہ",
+    "page": "103",
+    "debit": "",
+    "credit": "54,450",
+    "balance": ""
+  },
+  {
+    "date": "01/01/2025",
+    "description": "ایک سال کا کرایہ",
+    "page": "103",
+    "debit": "",
+    "credit": "59,895",
+    "balance": "207,748"
+  },
+  {
+    "date": "08/06/2026",
+    "description": "پراپرٹی ٹیکس",
+    "page": "103",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "205,748"
+  }
+]

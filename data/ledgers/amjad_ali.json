@@ -1,0 +1,682 @@
+[
+  {
+    "date": "--/--/----",
+    "description": "صفحہ نمبر 50 والا",
+    "page": "53",
+    "debit": "198,177",
+    "credit": "",
+    "balance": "198,177"
+  },
+  {
+    "date": "--/--/----",
+    "description": "چیک اکاؤنٹ میں جمع",
+    "page": "53",
+    "debit": "",
+    "credit": "852,000",
+    "balance": "653,823"
+  },
+  {
+    "date": "--/--/----",
+    "description": "نادیہ سے وصول پائے ادھار واپس",
+    "page": "53",
+    "debit": "101,000",
+    "credit": "",
+    "balance": "552,823"
+  },
+  {
+    "date": "--/--/----",
+    "description": "صفدر نے قسط وصول پائی",
+    "page": "53",
+    "debit": "100,000",
+    "credit": "",
+    "balance": "452,823"
+  },
+  {
+    "date": "--/12/2022",
+    "description": "HBL بینک",
+    "page": "53",
+    "debit": "200,000",
+    "credit": "",
+    "balance": "252,823"
+  },
+  {
+    "date": "13/10/2022",
+    "description": "نقد کیش شاھد سے",
+    "page": "53",
+    "debit": "50,000",
+    "credit": "",
+    "balance": "202,823"
+  },
+  {
+    "date": "19/02/2023",
+    "description": "اون لائن میزان میں شاھد",
+    "page": "53",
+    "debit": "30,000",
+    "credit": "",
+    "balance": "172,823"
+  },
+  {
+    "date": "26/12/2022",
+    "description": "اون لائن بہاولنگر سے",
+    "page": "53",
+    "debit": "",
+    "credit": "186,000",
+    "balance": ""
+  },
+  {
+    "date": "27/12/2022",
+    "description": "اون لائن بہاولنگر سے",
+    "page": "53",
+    "debit": "",
+    "credit": "140,000",
+    "balance": "498,823"
+  },
+  {
+    "date": "30/03/2023",
+    "description": "نقد کیش",
+    "page": "53",
+    "debit": "5,000",
+    "credit": "",
+    "balance": "493,823"
+  },
+  {
+    "date": "--/--/----",
+    "description": "پیدل رکشہ",
+    "page": "53",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "491,823"
+  },
+  {
+    "date": "09/02/2023",
+    "description": "صفدر پلاٹ کی قسط",
+    "page": "53",
+    "debit": "257,000",
+    "credit": "",
+    "balance": "234,823"
+  },
+  {
+    "date": "04/02/2023",
+    "description": "عامر ولد غلام مصطفی",
+    "page": "53",
+    "debit": "3,000",
+    "credit": "",
+    "balance": "231,823"
+  },
+  {
+    "date": "15/03/2023",
+    "description": "صفدر کو دیا امجد کے اکاونٹ میزان",
+    "page": "53",
+    "debit": "30,000",
+    "credit": "",
+    "balance": "201,823"
+  },
+  {
+    "date": "22/03/2023",
+    "description": "گھر کی دیوار کروائی",
+    "page": "53",
+    "debit": "2,222",
+    "credit": "",
+    "balance": "199,601"
+  },
+  {
+    "date": "20/04/2023",
+    "description": "امجد ولد غلام حسن صفدر کے",
+    "page": "53",
+    "debit": "20,000",
+    "credit": "",
+    "balance": "179,601"
+  },
+  {
+    "date": "01/05/2023",
+    "description": "ایک سال کا کرایہ",
+    "page": "53",
+    "debit": "",
+    "credit": "49,500",
+    "balance": "229,101"
+  },
+  {
+    "date": "--/--/----",
+    "description": "سابقہ کھاتہ صفحہ نمبر 53",
+    "page": "82",
+    "debit": "",
+    "credit": "229,101",
+    "balance": "229,101"
+  },
+  {
+    "date": "--/--/----",
+    "description": "امجد نے ادھار وصول پائے",
+    "page": "82",
+    "debit": "",
+    "credit": "100,000",
+    "balance": "329,101"
+  },
+  {
+    "date": "25/12/2023",
+    "description": "اون لائن میزان میں امجد",
+    "page": "82",
+    "debit": "",
+    "credit": "1,032,000",
+    "balance": "1,361,101"
+  },
+  {
+    "date": "--/--/----",
+    "description": "اون لائن میزان بینک امجد",
+    "page": "82",
+    "debit": "",
+    "credit": "30,000",
+    "balance": "1,391,101"
+  },
+  {
+    "date": "--/--/----",
+    "description": "صوبیا کو دیا سکینہ کی بیٹی (آپریشن)",
+    "page": "82",
+    "debit": "20,000",
+    "credit": "",
+    "balance": "1,371,101"
+  },
+  {
+    "date": "16/06/2023",
+    "description": "عامر کو دیا",
+    "page": "82",
+    "debit": "3,000",
+    "credit": "",
+    "balance": "1,368,101"
+  },
+  {
+    "date": "16/08/2023",
+    "description": "عامر کی فیس کالج کی",
+    "page": "82",
+    "debit": "35,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "12/08/2023",
+    "description": "عامر کو فریج دیا",
+    "page": "82",
+    "debit": "65,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "23/08/2023",
+    "description": "سمیع اللہ خرچہ",
+    "page": "82",
+    "debit": "7,140",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "12/09/2023",
+    "description": "ناصر بھٹی صفدر کی معرفت",
+    "page": "82",
+    "debit": "500,000",
+    "credit": "",
+    "balance": "818,101"
+  },
+  {
+    "date": "12/03/2023",
+    "description": "ناصر بھٹی کے اکاؤنٹ میں ڈالے",
+    "page": "82",
+    "debit": "417,460",
+    "credit": "",
+    "balance": "343,501"
+  },
+  {
+    "date": "--/--/----",
+    "description": "امی جان",
+    "page": "82",
+    "debit": "7,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "بہن سکینہ",
+    "page": "82",
+    "debit": "7,000",
+    "credit": "",
+    "balance": "329,501"
+  },
+  {
+    "date": "01/04/2024",
+    "description": "اشرف اون لائن امجد کی طرف سے",
+    "page": "82",
+    "debit": "",
+    "credit": "625,000",
+    "balance": "954,501"
+  },
+  {
+    "date": "01/04/2024",
+    "description": "سمیع اللہ",
+    "page": "82",
+    "debit": "7,500",
+    "credit": "",
+    "balance": "947,001"
+  },
+  {
+    "date": "--/--/----",
+    "description": "عامر",
+    "page": "82",
+    "debit": "2,500",
+    "credit": "",
+    "balance": "944,501"
+  },
+  {
+    "date": "01/04/2024",
+    "description": "صفدر نے امجد کے اکاؤنٹ میں کرایہ",
+    "page": "82",
+    "debit": "250,000",
+    "credit": "",
+    "balance": "694,501"
+  },
+  {
+    "date": "--/--/----",
+    "description": "سابقہ کھاتہ صفحہ نمبر 82",
+    "page": "83",
+    "debit": "",
+    "credit": "",
+    "balance": "644,501"
+  },
+  {
+    "date": "17/02/2024",
+    "description": "صفدر نے محمد عمر کے اکاؤنٹ میں کرائے MCB",
+    "page": "83",
+    "debit": "50,000",
+    "credit": "",
+    "balance": "594,501"
+  },
+  {
+    "date": "20/02/2024",
+    "description": "صفدر نے ندیم علوی کے اکاؤنٹ میں کرائے 50000",
+    "page": "83",
+    "debit": "50,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "83",
+    "debit": "300",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "23/02/2024",
+    "description": "نقد کیش صفدر کو دیا",
+    "page": "83",
+    "debit": "50,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "24/02/2024",
+    "description": "نقد کیش صفدر کو دیا",
+    "page": "83",
+    "debit": "50,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "02/02/2024",
+    "description": "صفدر کے اکاؤنٹ MCB",
+    "page": "83",
+    "debit": "50,000",
+    "credit": "",
+    "balance": "444,201"
+  },
+  {
+    "date": "24/02/2024",
+    "description": "صفدر نے محمد عمر کے اکاؤنٹ میں میزان",
+    "page": "83",
+    "debit": "100,000",
+    "credit": "",
+    "balance": "344,201"
+  },
+  {
+    "date": "04/02/2024",
+    "description": "اون لائن",
+    "page": "83",
+    "debit": "",
+    "credit": "600,000",
+    "balance": "944,201"
+  },
+  {
+    "date": "04/02/2024",
+    "description": "صفدر نے ساجد رحمن کے اکاؤنٹ میزان",
+    "page": "83",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "02/02/2024",
+    "description": "نقد کیش عابد ولد محمد شبیر میں دیئے",
+    "page": "83",
+    "debit": "50,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "05/02/2024",
+    "description": "صفدر نے A/M ٹریڈرز کے اکاؤنٹ میں",
+    "page": "83",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "83",
+    "debit": "175",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "09/02/2024",
+    "description": "محمد عمر بینک الفلاح صفدر",
+    "page": "83",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "83",
+    "debit": "100",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "10/02/2024",
+    "description": "عابد ولد شبیر صفدر میزان",
+    "page": "83",
+    "debit": "30,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "13/02/2024",
+    "description": "غلام صابر = صفدر",
+    "page": "83",
+    "debit": "10,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ذوالفقار بینک فیصل صفدر",
+    "page": "83",
+    "debit": "68,500",
+    "credit": "",
+    "balance": "485,426"
+  },
+  {
+    "date": "--/--/----",
+    "description": "سابقہ کھاتہ صفحہ نمبر 83",
+    "page": "84",
+    "debit": "",
+    "credit": "",
+    "balance": "485,426"
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "84",
+    "debit": "68",
+    "credit": "",
+    "balance": "485,358"
+  },
+  {
+    "date": "02/02/2024",
+    "description": "M-A ٹریڈرز حصہ",
+    "page": "84",
+    "debit": "100,000",
+    "credit": "",
+    "balance": "385,358"
+  },
+  {
+    "date": "16/02/2024",
+    "description": "اعجاز احمد البرکہ بینک",
+    "page": "84",
+    "debit": "40,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "84",
+    "debit": "100",
+    "credit": "",
+    "balance": "345,258"
+  },
+  {
+    "date": "03/02/2024",
+    "description": "اون لائن میزان بینک",
+    "page": "84",
+    "debit": "",
+    "credit": "800,000",
+    "balance": "1,145,258"
+  },
+  {
+    "date": "--/--/----",
+    "description": "غلام صابر اکاؤنٹ میں صفدر میزان",
+    "page": "84",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "اعجاز احمد اکاؤنٹ میں کرائے صفدر",
+    "page": "84",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "عبداللہ ٹریڈرز اکاؤنٹ میں کرائے",
+    "page": "84",
+    "debit": "175,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "صفدر نے نقد کیش وصول پایا",
+    "page": "84",
+    "debit": "50,000",
+    "credit": "",
+    "balance": "720,258"
+  },
+  {
+    "date": "03/02/2024",
+    "description": "عدنان یوسف سونو بینک",
+    "page": "84",
+    "debit": "80,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "اعجاز احمد الائیڈ بینک",
+    "page": "84",
+    "debit": "50,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "بونس ٹیکس",
+    "page": "84",
+    "debit": "55",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "03/02/2024",
+    "description": "صفدر میزان MB",
+    "page": "84",
+    "debit": "45,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "84",
+    "debit": "45",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "03/02/2024",
+    "description": "صفدر کے اکاؤنٹ میزان",
+    "page": "84",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "84",
+    "debit": "100",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "AM ٹریڈرز MCB صفدر",
+    "page": "84",
+    "debit": "85,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "84",
+    "debit": "85",
+    "credit": "",
+    "balance": "359,973"
+  },
+  {
+    "date": "--/--/----",
+    "description": "سابقہ کھاتہ صفحہ نمبر 84",
+    "page": "85",
+    "debit": "",
+    "credit": "",
+    "balance": "359,973"
+  },
+  {
+    "date": "25/02/2024",
+    "description": "اون لائن",
+    "page": "85",
+    "debit": "",
+    "credit": "400,000",
+    "balance": "759,973"
+  },
+  {
+    "date": "--/--/----",
+    "description": "M.A ٹریڈرز صفدر",
+    "page": "85",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "85",
+    "debit": "100",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "25/02/2024",
+    "description": "عبدالخالق کھوکھر",
+    "page": "85",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "85",
+    "debit": "100",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "28/02/2024",
+    "description": "صفدر کے اکاؤنٹ میزان",
+    "page": "85",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "85",
+    "debit": "100",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "02/04/2024",
+    "description": "صفدر کے اکاؤنٹ میزان",
+    "page": "85",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "85",
+    "debit": "100",
+    "credit": "",
+    "balance": "359,573"
+  },
+  {
+    "date": "14/04/2024",
+    "description": "اون لائن اکاؤنٹ میزان",
+    "page": "85",
+    "debit": "",
+    "credit": "200,000",
+    "balance": "559,573"
+  },
+  {
+    "date": "--/--/----",
+    "description": "صفدر حمزہ کے اکاؤنٹ میں میزان",
+    "page": "85",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "صفدر کے اکاؤنٹ میزان MCB",
+    "page": "85",
+    "debit": "100,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "ٹیکس",
+    "page": "85",
+    "debit": "200",
+    "credit": "",
+    "balance": "359,373"
+  }
+]

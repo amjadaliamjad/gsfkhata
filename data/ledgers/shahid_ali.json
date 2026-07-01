@@ -1,0 +1,242 @@
+[
+  {
+    "date": "01/08/2017",
+    "description": "1/8 کرایہ پلاٹ کا ایک سال",
+    "page": "46",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "22,800"
+  },
+  {
+    "date": "01/09/2018",
+    "description": "1/9 کرایہ مکان 12 ماہ کا",
+    "page": "46",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "45,600"
+  },
+  {
+    "date": "--/--/----",
+    "description": "روم کولر وصول پایا",
+    "page": "46",
+    "debit": "17,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "کولر مشین خراب",
+    "page": "46",
+    "debit": "6,000",
+    "credit": "",
+    "balance": "22,800"
+  },
+  {
+    "date": "23/04/2018",
+    "description": "پراپرٹی ٹیکس",
+    "page": "46",
+    "debit": "437",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "08/04/----",
+    "description": "سیوریج بنوائی شاھد",
+    "page": "46",
+    "debit": "693",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "26/09/2019",
+    "description": "وکیل کی فیس",
+    "page": "46",
+    "debit": "2,500",
+    "credit": "",
+    "balance": "19,170"
+  },
+  {
+    "date": "23/04/2019",
+    "description": "پراپرٹی ٹیکس",
+    "page": "46",
+    "debit": "445",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "26/09/2019",
+    "description": "ایک سال بجلی کا بل",
+    "page": "46",
+    "debit": "7,198",
+    "credit": "",
+    "balance": "11,527"
+  },
+  {
+    "date": "11/09/2019",
+    "description": "پراپرٹی ٹیکس",
+    "page": "46",
+    "debit": "460",
+    "credit": "",
+    "balance": "11,067"
+  },
+  {
+    "date": "--/--/----",
+    "description": "نادرا رپورٹ CBC",
+    "page": "46",
+    "debit": "100",
+    "credit": "",
+    "balance": "10,967"
+  },
+  {
+    "date": "10/02/2020",
+    "description": "وکیل کی فیس صفدر والی",
+    "page": "46",
+    "debit": "200",
+    "credit": "",
+    "balance": "10,767"
+  },
+  {
+    "date": "01/01/2020",
+    "description": "1/1 کا کرایہ",
+    "page": "46",
+    "debit": "",
+    "credit": "22,800",
+    "balance": "33,567"
+  },
+  {
+    "date": "--/--/----",
+    "description": "نقد کیش",
+    "page": "46",
+    "debit": "70,000",
+    "credit": "",
+    "balance": "36,433 (نام)"
+  },
+  {
+    "date": "01/01/2021",
+    "description": "ایک سال کا کرایہ 2021 کا",
+    "page": "46",
+    "debit": "",
+    "credit": "35,000",
+    "balance": "1,433 (نام)"
+  },
+  {
+    "date": "01/01/2022",
+    "description": "ایک سال کا کرایہ 2022 کا",
+    "page": "46",
+    "debit": "",
+    "credit": "45,000",
+    "balance": "43,567"
+  },
+  {
+    "date": "29/08/2022",
+    "description": "روم کولر جولائی مشین بل قابل کھاتے ایک رقم کر دی",
+    "page": "46",
+    "debit": "",
+    "credit": "12,190",
+    "balance": "55,757"
+  },
+  {
+    "date": "01/01/2017",
+    "description": "ایک سال کا کرایہ 2017 کا",
+    "page": "47",
+    "debit": "",
+    "credit": "19,000",
+    "balance": "74,757"
+  },
+  {
+    "date": "22/03/2023",
+    "description": "گھر کی دیوار کروائی",
+    "page": "47",
+    "debit": "2,222",
+    "credit": "",
+    "balance": "72,535"
+  },
+  {
+    "date": "01/01/2023",
+    "description": "ایک سال کا کرایہ 2023 کا",
+    "page": "47",
+    "debit": "",
+    "credit": "49,500",
+    "balance": "122,035"
+  },
+  {
+    "date": "01/06/2024",
+    "description": "6 ماہ کا کرایہ (نقد دیا گیا)",
+    "page": "47",
+    "debit": "24,750",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "بجلی کا بل شاھد",
+    "page": "47",
+    "debit": "5,000",
+    "credit": "",
+    "balance": ""
+  },
+  {
+    "date": "--/--/----",
+    "description": "جون کا بل شاھد",
+    "page": "47",
+    "debit": "10,000",
+    "credit": "",
+    "balance": "82,285"
+  },
+  {
+    "date": "03/07/2024",
+    "description": "جولائی کا بل بجلی کا",
+    "page": "47",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "80,285"
+  },
+  {
+    "date": "01/01/2024",
+    "description": "ایک سال کا کرایہ 2024 کا",
+    "page": "47",
+    "debit": "",
+    "credit": "54,450",
+    "balance": ""
+  },
+  {
+    "date": "01/01/2025",
+    "description": "ایک سال کا کرایہ 2025 کا",
+    "page": "47",
+    "debit": "",
+    "credit": "59,895",
+    "balance": "194,630"
+  },
+  {
+    "date": "19/02/2026",
+    "description": "اون لائن الائیڈ بینک",
+    "page": "47",
+    "debit": "15,000",
+    "credit": "",
+    "balance": "179,630"
+  },
+  {
+    "date": "--/05/2026",
+    "description": "بیگم چھت",
+    "page": "47",
+    "debit": "21,600",
+    "credit": "",
+    "balance": "158,030"
+  },
+  {
+    "date": "17/05/2026",
+    "description": "پراپرٹی ٹیکس",
+    "page": "47",
+    "debit": "2,000",
+    "credit": "",
+    "balance": "156,030"
+  },
+  {
+    "date": "10/06/2026",
+    "description": "اون لائن میزان بینک 1149 پلاٹ فروخت کیا",
+    "page": "47",
+    "debit": "",
+    "credit": "100,000",
+    "balance": ""
+  }
+]

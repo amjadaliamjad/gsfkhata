@@ -1,0 +1,127 @@
+{
+  "plot": {
+    "buyPrice2009": 5200000,
+    "cousinDemandPrice2017": 9300000,
+    "cousinSharePrice2017": 3100000,
+    "brothersBaseInvestment2017": 222000,
+    "khadimExtraInvestment2017": 1102000,
+    "salePrice2026": 42500000
+  },
+  "land": {
+    "totalCanals": 8,
+    "marketPrice8Canal": 4500000,
+    "marketPricePerAcre": 4500000,
+    "agreedSixCanalPrice": 3375000,
+    "useMarketRate": false
+  },
+  "rent": {
+    "years": [
+      { "year": 2017, "monthly": 19000, "months": 12 },
+      { "year": 2018, "monthly": 22800, "months": 12 },
+      { "year": 2019, "monthly": 25080, "months": 12 },
+      { "year": 2020, "monthly": 27588, "months": 12 },
+      { "year": 2021, "monthly": 35000, "months": 12 },
+      { "year": 2022, "monthly": 45000, "months": 12 },
+      { "year": 2023, "monthly": 49500, "months": 12 },
+      { "year": 2024, "monthly": 54450, "months": 12 },
+      { "year": 2025, "monthly": 59895, "months": 12 },
+      { "year": 2026, "monthly": 65885, "months": 10 }
+    ]
+  },
+  "family": {
+    "mother": {
+      "id": "mother",
+      "name": "والدہ محترمہ",
+      "nameEn": "Mother"
+    },
+    "sisters": [
+      {
+        "id": "sakina",
+        "name": "سکینہ بی بی",
+        "nameEn": "Sakina Bibi",
+        "sisterNo": 1
+      },
+      {
+        "id": "kalsoom",
+        "name": "کلثوم بی بی",
+        "nameEn": "Kalsoom Bibi",
+        "sisterNo": 2
+      }
+    ],
+    "brothers": [
+      {
+        "id": "ghulam_asghar",
+        "name": "غلام اصغر",
+        "nameEn": "Ghulam Asghar",
+        "brotherNo": 1,
+        "receivedRent": 0,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "ghulam_akbar",
+        "name": "غلام اکبر",
+        "nameEn": "Ghulam Akbar",
+        "brotherNo": 2,
+        "receivedRent": 91697,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "abid_hussain",
+        "name": "عابد حسین",
+        "nameEn": "Abid Hussain",
+        "brotherNo": 3,
+        "receivedRent": 353152,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "khadim_hussain",
+        "name": "خادم حسین",
+        "nameEn": "Khadim Hussain",
+        "brotherNo": 4,
+        "isAdmin": true,
+        "receivedRent": 0,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "ghulam_farooq",
+        "name": "غلام فاروق",
+        "nameEn": "Ghulam Farooq",
+        "brotherNo": 5,
+        "receivedRent": 149222,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "abdul_qayyum",
+        "name": "عبدالقیوم",
+        "nameEn": "Abdul Qayyum",
+        "brotherNo": 6,
+        "receivedRent": 0,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "safdar_ali",
+        "name": "صفدر علی",
+        "nameEn": "Safdar Ali",
+        "brotherNo": 7,
+        "receivedRent": 0,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "amjad_ali",
+        "name": "امجد علی",
+        "nameEn": "Amjad Ali",
+        "brotherNo": 8,
+        "receivedRent": 0,
+        "paidToKhadim": 0
+      },
+      {
+        "id": "shahid_ali",
+        "name": "شاہد علی",
+        "nameEn": "Shahid Ali",
+        "brotherNo": 9,
+        "receivedRent": 149895,
+        "paidToKhadim": 0
+      }
+    ]
+  }
+}
