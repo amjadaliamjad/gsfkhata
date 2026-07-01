@@ -642,9 +642,17 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
             <h2 style="background:var(--blu); color:white; margin:0; padding:15px 20px;">طے شدہ فکسڈ کرائے کے مطابق کھاتوں کی حتمی ایڈجسٹمنٹ</h2>
             
             <div style="background-color: var(--blt); padding: 15px 20px; border-bottom: 1px solid #bfdbfe; font-size: 15px; line-height: 1.8; color: #1e3a8a;">
-                <strong>حساب کا اصول (Formula):</strong><br />
-                <p style="margin-top: 5px; margin-bottom: 10px">اس ٹیبل میں ہر فرد کا حتمی اور صاف حساب درج ہے۔ <strong>پلاٹ کا کرایہ</strong> اور <strong>نقد لین دین</strong> پر کلک کر کے آپ فلٹر شدہ ریکارڈز دیکھ سکتے ہیں۔</p>
-                <p style="margin-top: 0; margin-bottom: 0">فائنل حساب نکالنے کے لیے، ہر فرد کے کھاتے (درست شدہ بقایا) میں سے ان کا جمع کرایا گیا <strong>پلاٹ کا کرایہ</strong> مائنس کر دیا گیا ہے، تاکہ صرف <strong>بقیہ نقد لین دین</strong> سامنے آ سکے۔ آخر میں <strong>نئے فکسڈ کرائے</strong> میں سے ان کا نقد بقایا مائنس کر کے <strong>حتمی قابل ادا</strong> رقم نکالی گئی ہے۔</p>
+                <strong style="font-size:17px;">📌 کرائے اور نقد لین دین کو الگ کیوں کیا گیا؟</strong><br />
+                <p style="margin-top: 5px; margin-bottom: 10px">
+                    کھاتے میں دو مختلف قسم کی رقوم شامل تھیں: <b>پلاٹ کا کرایہ</b> (جو سالوں تک رکا رہا اور جس پر منافع/Capital Gain لاگو ہوتا ہے) اور <b>خالص نقد لین دین</b> (عام قرضے یا ادائیگیاں جن پر کوئی منافع نہیں)۔<br>
+                    اگر ہم ان دونوں کو الگ نہ کرتے، تو تمام رقم (نقد اور قرض) پر بھی منافع لگ جاتا جو کہ غلط اور غیر شرعی ہوتا۔ اس لیے اس ٹیبل میں کرائے کو الگ کر کے صرف بقایا نقد رقم نکالی گئی ہے، تاکہ نئے فکسڈ کرائے میں اسے شفافیت کے ساتھ ایڈجسٹ کیا جا سکے۔
+                </p>
+                <strong style="font-size:16px; display:inline-block; margin-top:10px;">📊 کالمز کا فارمولا سمجھیں:</strong>
+                <ul style="margin-top: 5px; margin-bottom: 0; padding-right:20px;">
+                    <li><b>بقیہ نقد لین دین (C)</b> = درست شدہ بقایا (A) ➖ پلاٹ کا کرایہ (B) جو پہلے ہی کھاتے میں جمع تھا۔</li>
+                    <li><b>نیا فکسڈ کرایہ (D)</b> = وہ حتمی حصہ (منافع کے ساتھ) جو کیلکولیٹر نے ہر ممبر کے لیے طے کیا ہے (اوپر والے ٹیبل سے)۔</li>
+                    <li><b>حتمی قابل ادا</b> = (نیا فکسڈ کرایہ) ➕ (بقیہ نقد لین دین)۔ <i>یعنی اگر آپ نے خادم سے کچھ نقد لیا ہوا ہے (نقد مائنس میں ہے) تو وہ آپ کے نئے کرائے میں سے کٹ جائے گا۔</i></li>
+                </ul>
             </div>
 
             <div class="tw">
@@ -652,11 +660,11 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                     <thead>
                         <tr>
                             <th style="background:#f1f5f9;color:#1e40af;padding:12px;">نام</th>
-                            <th style="background:#f8fafc;color:#334155;padding:12px;">درست شدہ بقایا</th>
-                            <th style="background:#fef2f2;color:#991b1b;padding:12px;">پلاٹ کا کرایہ (جمع) ℹ️</th>
-                            <th style="background:#fefce8;color:#854d0e;padding:12px;">بقیہ نقد لین دین ℹ️</th>
-                            <th style="background:#f0fdf4;color:#16a34a;padding:12px;">نیا فکسڈ کرایہ</th>
-                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی قابل ادا</th>
+                            <th style="background:#f8fafc;color:#334155;padding:12px;">درست شدہ بقایا<br><small style="font-weight:normal;color:#64748b">(A)</small></th>
+                            <th style="background:#fef2f2;color:#991b1b;padding:12px;">پلاٹ کا کرایہ (جمع) ℹ️<br><small style="font-weight:normal;color:#ef4444">(B)</small></th>
+                            <th style="background:#fefce8;color:#854d0e;padding:12px;">بقیہ نقد لین دین ℹ️<br><small style="font-weight:normal;color:#ca8a04">(C = A - B)</small></th>
+                            <th style="background:#f0fdf4;color:#16a34a;padding:12px;">نیا فکسڈ کرایہ<br><small style="font-weight:normal;color:#22c55e">(D)</small></th>
+                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی قابل ادا<br><small style="font-weight:normal;color:#6366f1">(C + D)</small></th>
                         </tr>
                     </thead>
                     <tbody>
