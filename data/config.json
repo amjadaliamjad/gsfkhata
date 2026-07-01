@@ -32,6 +32,11 @@
         "end": 2026,
         "brothers": ["abid_hussain"]
       }
+    },
+    "paymentsMadeToKhadim": {
+      "ghulam_akbar": 0,
+      "abid_hussain": 0,
+      "abdul_qayyum": 0
     }
   },
   "rent": {

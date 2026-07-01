@@ -1261,6 +1261,16 @@ export function renderAgriculture(config, calcDataAll) {
     let amountP1_opt2 = agri.years.filter(y => y.year <= A.cultivators.period1.end).reduce((acc, y) => acc + y.khadimAmountOpt2, 0);
     let amountP2_opt2 = agri.years.filter(y => y.year >= A.cultivators.period2.start).reduce((acc, y) => acc + y.khadimAmountOpt2, 0);
 
+    let totalReceived = 0;
+    if (A.paymentsMadeToKhadim) {
+        totalReceived = (A.paymentsMadeToKhadim.ghulam_akbar || 0) + 
+                        (A.paymentsMadeToKhadim.abid_hussain || 0) + 
+                        (A.paymentsMadeToKhadim.abdul_qayyum || 0);
+    }
+    
+    let netRemainingOpt1 = agri.totalOpt1 - totalReceived;
+    let netRemainingOpt2 = agri.totalOpt2 - totalReceived;
+
     return `
     <div class="card-ex" style="background:#F0FDF4;border-color:var(--gm)">
         <h2 style="color:var(--gm)">🌾 زرعی زمین کا ٹھیکہ (Agriculture Land Lease)</h2>
@@ -1316,8 +1326,16 @@ export function renderAgriculture(config, calcDataAll) {
                 <h4 style="margin-top:0; color:var(--pur); margin-bottom:10px;">واجب الادا سمری (آپشن 1):</h4>
                 <ul style="margin:0; padding-right:20px; font-size:15px;">
                     <li style="margin-bottom:5px;"><b>${cultivatorsPeriod1} (مشترکہ):</b> ${num(amountP1_opt1)} روپے (2016-2020)</li>
-                    <li><b>${cultivatorsPeriod2}:</b> ${num(amountP2_opt1)} روپے (2021-2026)</li>
+                    <li style="margin-bottom:15px;"><b>${cultivatorsPeriod2}:</b> ${num(amountP2_opt1)} روپے (2021-2026)</li>
                 </ul>
+                <div style="border-top:1px dashed #d8b4fe; margin-top:10px; padding-top:10px; display:flex; justify-content:space-between;">
+                    <span><b>پہلے سے وصول شدہ:</b></span>
+                    <span style="color:#b91c1c;" class="n">-${num(totalReceived)}</span>
+                </div>
+                <div style="border-top:2px solid #d8b4fe; margin-top:10px; padding-top:10px; display:flex; justify-content:space-between; font-size:18px; font-weight:bold;">
+                    <span><b>فائنل بقایا:</b></span>
+                    <span style="color:var(--pur);" class="n">${num(netRemainingOpt1)}</span>
+                </div>
             </div>
         </div>
 
@@ -1349,8 +1367,16 @@ export function renderAgriculture(config, calcDataAll) {
                 <h4 style="margin-top:0; color:var(--gm); margin-bottom:10px;">واجب الادا سمری (آپشن 2):</h4>
                 <ul style="margin:0; padding-right:20px; font-size:15px;">
                     <li style="margin-bottom:5px;"><b>${cultivatorsPeriod1} (مشترکہ):</b> ${num(amountP1_opt2)} روپے (2016-2020)</li>
-                    <li><b>${cultivatorsPeriod2}:</b> ${num(amountP2_opt2)} روپے (2021-2026)</li>
+                    <li style="margin-bottom:15px;"><b>${cultivatorsPeriod2}:</b> ${num(amountP2_opt2)} روپے (2021-2026)</li>
                 </ul>
+                <div style="border-top:1px dashed #86efac; margin-top:10px; padding-top:10px; display:flex; justify-content:space-between;">
+                    <span><b>پہلے سے وصول شدہ:</b></span>
+                    <span style="color:#b91c1c;" class="n">-${num(totalReceived)}</span>
+                </div>
+                <div style="border-top:2px solid #86efac; margin-top:10px; padding-top:10px; display:flex; justify-content:space-between; font-size:18px; font-weight:bold;">
+                    <span><b>فائنل بقایا:</b></span>
+                    <span style="color:var(--gm);" class="n">${num(netRemainingOpt2)}</span>
+                </div>
             </div>
         </div>
 
