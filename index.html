@@ -4,10 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1B4332">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="سرور کھاتہ">
+<meta name="application-name" content="سرور کھاتہ">
 <title>سرور فیملی کھاتہ — Sarwar Family Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="images/TaibaLogoMobile.png">
+<link rel="icon" type="image/png" href="images/TaibaLogoMobile.png">
 </head>
 <body>
 <div class="shell">
@@ -76,10 +83,27 @@
     </div>
 </div>
 
-</div> <!-- /shell -->
+<!-- ════ PWA INSTALL BANNER ════ -->
+<div id="pwaBanner" style="display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:9999;
+  width:min(560px,calc(100% - 24px));background:#fff;border:1px solid #d4a017;border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);padding:14px 16px;font-family:'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu',sans-serif;direction:rtl">
+  <div style="display:flex;align-items:center;gap:12px">
+    <div style="font-size:30px">📲</div>
+    <div style="flex:1;line-height:1.7">
+      <div style="font-weight:bold;color:#1B4332;font-size:16px">ایپ انسٹال کریں</div>
+      <div id="pwaMsg" style="font-size:13px;color:#374151;font-family: Arial, sans-serif;">اس ڈیش بورڈ کو اپنے موبائل پر ایپ کے طور پر شامل کریں — تیز رسائی کے لیے ہوم اسکرین پر آئیکن بن جائے گا۔</div>
+    </div>
+    <button id="pwaClose" style="background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1">×</button>
+  </div>
+  <div id="pwaActions" style="margin-top:10px;display:flex;gap:8px;justify-content:flex-start">
+    <button id="pwaInstallBtn" style="background:#1B4332;color:#fff;border:none;border-radius:9px;padding:9px 20px;
+      font-family:inherit;font-size:15px;font-weight:bold;cursor:pointer">انسٹال کریں</button>
+  </div>
+</div>
 
 <script src="js/app.js" type="module"></script>
 <script>
+    // Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('sw.js')
@@ -87,6 +111,59 @@
                 .catch(err => console.log('Service Worker registration failed', err));
         });
     }
+
+    // PWA Custom Banner Logic
+    (function(){
+      function isStandalone(){
+        return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+      }
+      function isIOS(){
+        return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+      }
+      var DISMISS_KEY='pwaBannerDismissed';
+      var banner, deferred=null;
+
+      function show(){ if(banner) banner.style.display='block'; }
+      function hide(){ if(banner) banner.style.display='none'; }
+
+      window.addEventListener('beforeinstallprompt',function(e){
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault(); 
+        // Stash the event so it can be triggered later.
+        deferred=e;
+        if(!isStandalone() && sessionStorage.getItem(DISMISS_KEY)!=='1') show();
+      });
+      
+      window.addEventListener('appinstalled',function(){ hide(); deferred=null; });
+
+      document.addEventListener('DOMContentLoaded',function(){
+        banner=document.getElementById('pwaBanner');
+        if(!banner) return;
+        document.getElementById('pwaClose').onclick=function(){ hide(); sessionStorage.setItem(DISMISS_KEY,'1'); };
+        var btn=document.getElementById('pwaInstallBtn');
+        btn.onclick=function(){
+          if(deferred){ 
+              deferred.prompt(); 
+              deferred.userChoice.then(function(choiceResult){ 
+                  if (choiceResult.outcome === 'accepted') {
+                      console.log('User accepted the A2HS prompt');
+                  }
+                  deferred=null; 
+                  hide(); 
+              }); 
+          }
+        };
+        if(isStandalone()) return;
+        if(isIOS()){
+          // iOS has no beforeinstallprompt — show guidance instead
+          if(sessionStorage.getItem(DISMISS_KEY)!=='1'){
+            document.getElementById('pwaMsg').innerHTML='آئی فون پر انسٹال کرنے کے لیے: نیچے <b>Share</b> (⬆️) پر ٹیپ کریں، پھر <b>“Add to Home Screen”</b> منتخب کریں۔';
+            document.getElementById('pwaActions').style.display='none';
+            show();
+          }
+        }
+      });
+    })();
 </script>
 </body>
 </html>
