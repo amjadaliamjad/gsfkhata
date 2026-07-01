@@ -53,7 +53,7 @@
     "date": "--/--/----",
     "description": "داخلہ فیس",
     "page": "48",
-    "debit": "4,560",
+    "debit": "4,500",
     "credit": "",
     "balance": "",
     "id": 6,
@@ -103,7 +103,7 @@
     "date": "26/04/2019",
     "description": "امان اللہ کا بجلی کا بل ایک سال کا",
     "page": "48",
-    "debit": "7,198",
+    "debit": "7,195",
     "credit": "",
     "balance": "16,627",
     "id": 11,
@@ -307,16 +307,6 @@
     "credit": "",
     "balance": "236,490",
     "id": 31,
-    "type": "cash"
-  },
-  {
-    "date": "10/06/2026",
-    "description": "چاول چونا سیمنٹ منگوایا",
-    "page": "49",
-    "debit": "",
-    "credit": "22,500",
-    "balance": "258,990",
-    "id": 32,
     "type": "cash"
   }
 ]
