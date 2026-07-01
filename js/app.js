@@ -52,9 +52,6 @@ class App {
         
         const navEl = document.getElementById('nav-' + this.currentView);
         if (navEl) navEl.classList.add('active');
-        else if(this.currentView === 'opt1' || this.currentView === 'opt2') {
-            document.getElementById('nav-calc').classList.add('active');
-        }
         
         // Update active nav mobile
         document.querySelectorAll('.mobile-nav-menu .nav-item').forEach(n => n.classList.remove('active'));
