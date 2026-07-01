@@ -651,9 +651,9 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                 <ul style="margin-top: 5px; margin-bottom: 0; padding-right:20px;">
                     <li><b>درست شدہ بقایا (A)</b> = کھاتے کا موجودہ فائنل بیلنس۔</li>
                     <li><b>درج کل کرایہ (B)</b> = کھاتے میں جمع کیے گئے کرائے کی انٹریز کا ٹوٹل۔</li>
-                    <li><b>دیگر لین دین (C = A - B)</b> = بقایا میں سے کرایہ نکالیں تو خالص دیگر لین دین نکل آتا ہے۔ اگر یہ مائنس (-) میں ہے، تو اس کا مطلب ہے خادم نے آپ کو نقد ادائیگی کی ہوئی ہے۔</li>
+                    <li><b>نقد کٹوتی (C = B - A)</b> = کرائے میں سے بقایا نکالیں تو پتہ چلتا ہے کہ آپ نے خادم سے کتنا نقد وصول کیا ہے (جو اب کٹے گا)۔ <i>نوٹ: ریاضی کے اصول کے مطابق (B - C = A) ہوتا ہے۔</i></li>
                     <li><b>کل فکسڈ کرایہ (D)</b> = آپ کا اصل کل کرایہ (بغیر منافع)۔</li>
-                    <li><b>حتمی بقایا (D + C)</b> = چونکہ مائنس کی رقم خودبخود کٹ جاتی ہے، اس لیے ہم اسے جمع (D + C) کرتے ہیں تاکہ اگر آپ کا نقد بیلنس مائنس میں ہو تو وہ کرائے میں سے کٹ جائے، اور اگر پلس میں ہو تو کرائے میں جمع ہو جائے۔</li>
+                    <li><b>حتمی بقایا (D - C)</b> = آپ کے نئے کرائے میں سے آپ کی نقد وصولی (کٹوتی) کو مائنس کیا گیا ہے۔</li>
                 </ul>
             </div>
 
@@ -664,9 +664,9 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                             <th style="background:#f1f5f9;color:#1e40af;padding:12px;">نام</th>
                             <th style="background:#f8fafc;color:#334155;padding:12px;">درست شدہ بقایا<br><small style="font-weight:normal;color:#64748b">(A)</small></th>
                             <th style="background:#fef2f2;color:#991b1b;padding:12px;">درج کل کرایہ ℹ️<br><small style="font-weight:normal;color:#ef4444">(B)</small></th>
-                            <th style="background:#fefce8;color:#854d0e;padding:12px;">دیگر لین دین ℹ️<br><small style="font-weight:normal;color:#ca8a04">(C = A - B)</small></th>
+                            <th style="background:#fefce8;color:#854d0e;padding:12px;">نقد کٹوتی ℹ️<br><small style="font-weight:normal;color:#ca8a04">(C = B - A)</small></th>
                             <th style="background:#f0fdf4;color:#16a34a;padding:12px;">کل فکسڈ کرایہ<br><small style="font-weight:normal;color:#22c55e">(D)</small></th>
-                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی بقایا<br><small style="font-weight:normal;color:#6366f1">(D + C)</small></th>
+                            <th style="background:#e0e7ff;color:#3730a3;padding:12px;">حتمی بقایا<br><small style="font-weight:normal;color:#6366f1">(D - C)</small></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -682,14 +682,14 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                             
                             let durust = tCredit - tDebit; // A
                             let rentJuma = rCredit - rDebit; // B
-                            let otherTrans = durust - rentJuma; // C = A - B
+                            let cashWithdrawn = rentJuma - durust; // C = B - A
                             
                             let isMother = m.id === 'mother';
                             let isSister = m.id.startsWith('sister');
                             let newRent = isMother ? s1.mother.rent : (isSister ? s1.sisters.rent : s1.brotherBase.rent); // D
                             if (m.isAdmin) newRent = 0;
                             
-                            let finalPayable = newRent + otherTrans; // D + C
+                            let finalPayable = newRent - cashWithdrawn; // D - C
                             
                             return `
                             <tr style="background:${i%2===0 ? '#fff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
@@ -699,7 +699,7 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                                     ${num(rentJuma)}
                                 </td>
                                 <td class="n" style="padding:12px;color:#854d0e;font-weight:bold;cursor:pointer;background:#FEFCE8;" onclick="app.showInfo('${m.name} - نقد لین دین', window.generateLedgerTable('${m.id}', 'cash'))">
-                                    ${num(otherTrans)} ${otherTrans < 0 ? '<br><span style="font-size:11px;font-weight:normal;color:#b91c1c">(خادم نے نقد دیا)</span>' : '<br><span style="font-size:11px;font-weight:normal;color:#16a34a">(خادم کو نقد دیا)</span>'}
+                                    ${num(cashWithdrawn)} ${cashWithdrawn < 0 ? '<br><span style="font-size:11px;font-weight:normal;color:#16a34a">(خادم سے نقد جمع کروایا)</span>' : ''}
                                 </td>
                                 <td class="n" style="padding:12px;color:#16a34a;">${num(newRent)}</td>
                                 <td class="n" style="padding:12px;color:#3730a3;font-size:18px;font-weight:bold;background:#e0e7ff;">${num(finalPayable)}</td>
