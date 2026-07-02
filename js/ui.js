@@ -257,6 +257,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
     </div>
 
 
+    ${(config.agreementMode === 1) ? `
     <!-- OPTION 1 SECTION -->
     <div class="card-hdr-clean">
         <h2>👨‍👩‍👧‍👦 &nbsp;&nbsp; خاندانی ممبران — مختصر خلاصہ (Option 1 کے مطابق) <span class="t-info" style="margin-right:10px" onclick="app.showInfo('طریقہ 1: موجودہ معاہدہ', '${escapeHtml(historyText1)}')">ℹ️</span></h2>
@@ -309,6 +310,9 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
         </div>
     </div>
 
+    ` : ''}
+        
+    ${(config.agreementMode === 2 || !config.agreementMode) ? `
     <br><hr style="border:none;border-top:2px dashed var(--g300);margin:30px 0;"><br>
 
     <!-- OPTION 2 SECTION -->
@@ -1313,6 +1317,7 @@ export function renderKhata(config, ledgers, idParam, tabParam) {
 export function renderCashProfit(config, calc) {
     const num = (x) => new Intl.NumberFormat('en-IN').format(Math.round(x));
     const s2 = calc.s2;
+    if (config.agreementMode === 1) return "<div style='padding:40px; text-align:center;'><h2>معاہدہ 1 میں کیش منافع کا تصور نہیں ہے۔ براہ کرم معاہدہ 2 منتخب کریں۔</h2></div>";
     if (!s2 || !s2.individualSettlements) return "<h2>کوئی ڈیٹا نہیں ملا</h2>";
     
     let totalBase = 0;

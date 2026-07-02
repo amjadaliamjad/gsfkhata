@@ -18,9 +18,15 @@ export function calculateScenarios(config, ledgers = {}, isIslamic = false) {
     const landValue = L.useMarketRate ? (L.marketPrice8Canal / 8 * 6) : L.agreedSixCanalPrice;
     const landPerBrother = Math.round(landValue / 9);
 
+    // Deductions from Sale Price
+    const netSalePrice2026 = P.salePrice2026 
+        - (P.expenses2026 || 0) 
+        - (P.shahidBonus2026 || 0) 
+        - (P.collectiveReserve2026 || 0);
+
     // Plot Base Division (2009 Family Share vs 2017 Cousin Share)
-    const cousinOneThird = Math.round(P.salePrice2026 / 3);
-    const familyTwoThird = P.salePrice2026 - cousinOneThird;
+    const cousinOneThird = Math.round(netSalePrice2026 / 3);
+    const familyTwoThird = netSalePrice2026 - cousinOneThird;
     
     const motherPlot = Math.round(familyTwoThird / 8);
     const siblingsPlotPool = familyTwoThird - motherPlot;
@@ -52,8 +58,8 @@ export function calculateScenarios(config, ledgers = {}, isIslamic = false) {
     };
 
     // --- SCENARIO 2 (Plot Growth & Rent Profit) ---
-    const cagr = Math.pow(P.salePrice2026 / P.cousinDemandPrice2017, 1/9) - 1; // approx 18.4%
-    const growthMultiplier = P.salePrice2026 / P.cousinDemandPrice2017;
+    const cagr = Math.pow(netSalePrice2026 / P.cousinDemandPrice2017, 1/9) - 1; 
+    const growthMultiplier = netSalePrice2026 / P.cousinDemandPrice2017;
     const s2_khadimExtraProfit = Math.round(P.khadimExtraInvestment2017 * growthMultiplier);
     
     let s2_totalRentWithProfit = 0;

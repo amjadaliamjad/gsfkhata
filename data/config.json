@@ -5,7 +5,10 @@
     "cousinSharePrice2017": 3100000,
     "brothersBaseInvestment2017": 220000,
     "khadimExtraInvestment2017": 1120000,
-    "salePrice2026": 42500000
+    "salePrice2026": 40500000,
+    "expenses2026": 150000,
+    "shahidBonus2026": 3000000,
+    "collectiveReserve2026": 200000
   },
   "land": {
     "totalCanals": 8,

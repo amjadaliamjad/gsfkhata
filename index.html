@@ -56,13 +56,22 @@
                 <a href="#khata" class="nav-item" id="nav-khata">📒 کھاتہ</a>
                 <a href="#summary" class="nav-item" id="nav-summary">📖 طریقہ کار</a>
         
-                <div style="display:flex; margin-right:10px; border-right: 1px solid var(--g200); padding-right:10px; align-items:center;">
+                <div style="display:flex; margin-right:10px; border-right: 1px solid var(--g200); padding-right:10px; align-items:center; gap: 10px;">
                     <div class="toggle-group" style="display:flex; border-radius:6px; overflow:hidden; border:1px solid var(--g300);">
                         <button id="btn-islamic-off" style="flex:1; width:125px; padding:8px 8px; background:var(--red); color:white; border:none; cursor:pointer; font-size:14px; font-weight:bold; transition:all 0.3s; text-align:center;" onclick="app.toggleIslamicMode(false); updateIslamicUI(false);">
                             💰 منافع کے ساتھ
                         </button>
                         <button id="btn-islamic-on" style="flex:1; width:125px; padding:8px 8px; background:var(--g100); color:var(--g800); border:none; cursor:pointer; font-size:14px; font-weight:bold; transition:all 0.3s; text-align:center;" onclick="app.toggleIslamicMode(true); updateIslamicUI(true);">
                             🕌 بغیر منافع
+                        </button>
+                    </div>
+
+                    <div class="toggle-group" id="agreement-mode-group" style="display:flex; border-radius:6px; overflow:hidden; border:1px solid var(--g300);">
+                        <button id="btn-agree-1" style="flex:1; width:125px; padding:8px 8px; background:var(--w); color:var(--g800); border:none; cursor:pointer; font-size:14px; font-weight:bold; transition:all 0.3s; text-align:center;" onclick="app.toggleAgreementMode(1); updateAgreementUI(1);">
+                            معاہدہ 1 (زمین)
+                        </button>
+                        <button id="btn-agree-2" style="flex:1; width:125px; padding:8px 8px; background:var(--blu); color:white; border:none; cursor:pointer; font-size:14px; font-weight:bold; transition:all 0.3s; text-align:center;" onclick="app.toggleAgreementMode(2); updateAgreementUI(2);">
+                            معاہدہ 2 (انویسٹمنٹ)
                         </button>
                     </div>
                 </div>
@@ -80,6 +89,24 @@
                             offBtn.style.color = 'white';
                             onBtn.style.background = 'var(--g100)';
                             onBtn.style.color = 'var(--g800)';
+                        }
+                    }
+
+                    function updateAgreementUI(mode) {
+                        const btn1 = document.getElementById('btn-agree-1');
+                        const btn2 = document.getElementById('btn-agree-2');
+                        if(btn1 && btn2) {
+                            if (mode === 1) {
+                                btn1.style.background = 'var(--pur)';
+                                btn1.style.color = 'white';
+                                btn2.style.background = 'var(--g100)';
+                                btn2.style.color = 'var(--g800)';
+                            } else {
+                                btn1.style.background = 'var(--g100)';
+                                btn1.style.color = 'var(--g800)';
+                                btn2.style.background = 'var(--blu)';
+                                btn2.style.color = 'white';
+                            }
                         }
                     }
                 </script>

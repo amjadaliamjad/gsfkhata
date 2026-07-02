@@ -79,6 +79,12 @@ class App {
         this.renderView();
     }
 
+    toggleAgreementMode(mode) {
+        this.agreementMode = mode;
+        this.config.agreementMode = mode;
+        this.renderView();
+    }
+
     toggleIslamicMode(isIslamic) {
         this.isIslamic = isIslamic;
         this.config.isIslamic = isIslamic;
@@ -88,9 +94,15 @@ class App {
         this.renderView();
     }
 
+    setLoading(isLoading) {
+        if (isLoading) document.body.classList.add('loading');
+        else document.body.classList.remove('loading');
+    }
+
     renderView() {
         const container = document.getElementById('view-container');
         this.config.isIslamic = this.isIslamic; // Ensure it's always set
+        this.config.agreementMode = this.agreementMode || 2; // Default to 2 (Investment)
         
         if (this.currentView === 'dash') {
             container.innerHTML = UI.renderDashboard(this.config, this.calculations, this.calculations.base, this.ledgers);
