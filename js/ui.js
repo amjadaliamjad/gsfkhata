@@ -161,7 +161,9 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
     // Explanation Texts
     const historyText1 = `یہ طریقہ پرانے معاہدے پر مبنی ہے۔ والد صاحب نے 2008/2009 میں گرین ٹاؤن میں 10 مرلہ کا پلاٹ خریدا تھا۔ پیسوں کی کمی کی وجہ سے انہوں نے کزن منیر احمد کو 1/3 حصے دار بنا لیا۔ 2017 میں کزن نے اپنا حصہ مانگا جس کی مالیت 31 لاکھ روپے طے پائی۔ باقی 8 بھائیوں نے صرف 2.22 لاکھ کا حصہ ڈالا، جبکہ خادم حسین نے اپنا 2.22 لاکھ اور مزید 11.02 لاکھ ادا کر کے کزن کو فارغ کیا۔ <br><br>اس طریقے (Option 1) کے مطابق، خادم کو ان کی انویسٹمنٹ کی بنیاد پر پلاٹ کا اضافی حصہ تو دے دیا گیا ہے، لیکن کرائے کی مد میں رکی ہوئی رقم پر کوئی منافع (Profit) شامل نہیں کیا گیا۔ <b>شرعی لحاظ سے</b> پیسے کی وقت کے ساتھ قدر گرتی ہے (Inflation)، اس لیے سالوں سے رکے ہوئے کرائے پر منافع نہ دینا شرعی اصولوں کے منافی اور ناانصافی ہو سکتا ہے۔ ہر بھائی کا خالص حصہ (Net) اس میں ظاہر کیا گیا ہے۔`;
 
-    const historyText2 = `یہ طریقہ مکمل طور پر انصاف اور شرعی اصولوں (Islamic Equity & Mudarabah principles) پر مبنی ہے۔ چونکہ 2017 میں خادم حسین نے مشکل وقت میں 11.02 لاکھ کی خطیر رقم انویسٹ کی، اور دوسری طرف خاندان کا کرایہ بھی خادم کے پاس سالوں تک رکا رہا۔ شرعی لحاظ سے رکی ہوئی رقم (چاہے وہ انویسٹمنٹ ہو یا کرایہ) کو اگر کاروبار یا جائیداد میں استعمال کیا جائے، تو اس پر منافع (Profit / Capital Gain) لاگو ہوتا ہے۔<br><br>اس طریقے میں خادم کی انویسٹمنٹ اور خاندان کے رکے ہوئے کرائے، دونوں کو پلاٹ کی قیمت کے اضافے (تقریباً 18.4% سالانہ) کے حساب سے بڑھایا گیا ہے۔ اس سے کسی کی بھی حق تلفی نہیں ہوتی اور تمام ممبران کو ان کی رکی ہوئی رقم پر پلاٹ کے تناسب سے بہترین فائدہ ملتا ہے۔`;
+    const historyText2 = config.isIslamic
+        ? `یہ طریقہ مکمل طور پر انصاف اور شرعی اصولوں پر مبنی ہے۔ خادم حسین کی 11.02 لاکھ کی انویسٹمنٹ کو آج کے پلاٹ کی قیمت میں اضافے کے حساب سے بڑھایا گیا ہے۔ تاہم، چونکہ شرعی موڈ آن ہے، اس لیے خاندان کے رکے ہوئے کرائے پر کوئی منافع (Profit) شامل نہیں کیا گیا اور صرف اصل کرایہ ہی شمار کیا گیا ہے۔`
+        : `یہ طریقہ مکمل طور پر انصاف اور شرعی اصولوں (Islamic Equity & Mudarabah principles) پر مبنی ہے۔ چونکہ 2017 میں خادم حسین نے مشکل وقت میں 11.02 لاکھ کی خطیر رقم انویسٹ کی، اور دوسری طرف خاندان کا کرایہ بھی خادم کے پاس سالوں تک رکا رہا۔ شرعی لحاظ سے رکی ہوئی رقم (چاہے وہ انویسٹمنٹ ہو یا کرایہ) کو اگر کاروبار یا جائیداد میں استعمال کیا جائے، تو اس پر منافع (Profit / Capital Gain) لاگو ہوتا ہے۔<br><br>اس طریقے میں خادم کی انویسٹمنٹ اور خاندان کے رکے ہوئے کرائے، دونوں کو پلاٹ کی قیمت کے اضافے (تقریباً 18.4% سالانہ) کے حساب سے بڑھایا گیا ہے۔ اس سے کسی کی بھی حق تلفی نہیں ہوتی اور تمام ممبران کو ان کی رکی ہوئی رقم پر پلاٹ کے تناسب سے بہترین فائدہ ملتا ہے۔`;
 
     return `
     <!-- Top General Explanation Box -->
@@ -320,7 +322,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
     <!-- Details Table Option 2 -->
     <div class="table-container">
         <h3 style="justify-content:space-between">
-            <span>📈 طریقہ 2: انویسٹمنٹ اور کرائے پر پلاٹ منافع (شرعی اصول)</span>
+            <span>📈 طریقہ 2: انویسٹمنٹ اور کرائے پر پلاٹ منافع (${config.isIslamic ? 'شرعی اصول / بغیر کرایہ منافع' : 'شرعی اصول'})</span>
             <span class="t-info" onclick="app.showInfo('جدول کی تفصیل (طریقہ 2)', 'یہ جدول انصاف اور شرعی اصول پر مبنی ہے۔<br><br>• <b>پلاٹ کا حصہ:</b> خادم کی 2017 کی انویسٹمنٹ کو آج کے پلاٹ کی قیمت میں اضافے کے حساب سے بڑھایا گیا ہے۔<br>• <b>کرایہ منافع کیساتھ:</b> جو کرایہ جس سال خادم کے پاس جمع ہوا، اس پر بھی پلاٹ کا وہی منافع لگا کر آج کی ویلیو نکالی گئی ہے۔ اس سے بھائیوں کو ان کے رکے ہوئے کرائے پر بہترین فائدہ ملتا ہے۔')">ℹ️</span>
         </h3>
         <div class="tw">
@@ -330,7 +332,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
                         <th>#</th>
                         <th>بھائی کا نام</th>
                         <th>پلاٹ کا حصہ</th>
-                        <th>کل کرایہ (منافع کے ساتھ)</th>
+                        <th>کل کرایہ (${config.isIslamic ? 'بغیر منافع' : 'منافع کے ساتھ'})</th>
                         <th>وصول شدہ</th>
                         <th>بقایا کرایہ</th>
                         <th>قابل ادا (زمین)</th>
@@ -490,7 +492,7 @@ export function renderRent(config, calcDataAll, baseData, ledgers) {
                 <tr>
                     <th style="background:var(--gd);color:white;padding:10px">سال</th>
                     <th style="background:var(--gd);color:white;padding:10px">بنیادی حصہ</th>
-                    <th style="background:var(--gd);color:white;padding:10px">منافع کے ساتھ ویلیو</th>
+                    <th style="background:var(--gd);color:white;padding:10px">${config.isIslamic ? 'ویلیو (بغیر منافع)' : 'منافع کے ساتھ ویلیو'}</th>
                     <th style="background:var(--gd);color:white;padding:10px">خالص منافع</th>
                 </tr>
             </thead>
@@ -1030,7 +1032,7 @@ export function renderProfitDistribution(config, calcDataAll, baseData) {
         </div>
 
         <div class="table-container" style="margin-top:25px;">
-            <h3 style="background:var(--pur);color:white;border:none;">📊 تفصیلی خاندانی تقسیم (طریقہ 2 - منافع کے ساتھ)</h3>
+            <h3 style="background:var(--pur);color:white;border:none;">📊 تفصیلی خاندانی تقسیم (طریقہ 2 - ${config.isIslamic ? 'شرعی / بغیر منافع' : 'منافع کے ساتھ'})</h3>
             <div class="tw">
                 <table class="tbl">
                     <thead>
@@ -1085,7 +1087,7 @@ export function renderProfitDistribution(config, calcDataAll, baseData) {
                     <strong class="n" style="color:var(--g800)">${num((s2.rentByYear[0].base - (s2.rentByYear[0].base/8))/10)}</strong>
                 </div>
                 <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:15px;">
-                    <span style="color:#64748b">منافع کے ساتھ بھائی کا حصہ:</span>
+                    <span style="color:#64748b">${config.isIslamic ? 'بھائی کا کل حصہ:' : 'منافع کے ساتھ بھائی کا حصہ:'}</span>
                     <strong class="n" style="color:var(--gm)">${num((s2.rentByYear[0].withProfit - (s2.rentByYear[0].withProfit/8))/10)}</strong>
                 </div>
             </div>
@@ -1407,7 +1409,7 @@ export function renderCashProfit(config, calc) {
                             <th style="background:var(--g50);">کریڈٹ (خادم نے لیے)</th>
                             <th style="background:var(--g50);">خالص کیش</th>
                             <th style="background:var(--g50);">منافع ضرب (Multiplier)</th>
-                            <th style="background:var(--g50);">منافع کے ساتھ رقم</th>
+                            <th style="background:var(--g50);">${config.isIslamic ? 'فائنل رقم (بغیر منافع)' : 'منافع کے ساتھ رقم'}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1453,7 +1455,7 @@ export function renderCashProfit(config, calc) {
 
         <div style="background:#fff3cd; color:#856404; padding:20px; border-radius:12px; border:1px solid #ffeeba; margin-bottom:30px; line-height:1.8;">
             <h3 style="margin-top:0; color:#856404; display:flex; align-items:center; gap:10px;">⚠️ وضاحت: فائنل رقم میں تبدیلی کیسے آتی ہے؟ (اہم مثال)</h3>
-            <p style="margin-top:5px; font-size:15px;">بعض اوقات ایسا ہوتا ہے کہ کسی بھائی نے خادم کو زیادہ کیش دیا ہوتا ہے (جس کی وجہ سے <b>اصل خالص رقم</b> سبز رنگ میں نظر آتی ہے)، لیکن <b>منافع کے ساتھ فائنل رقم</b> منفی (سرخ) ہو جاتی ہے۔ ایسا کیوں ہوتا ہے؟</p>
+            <p style="margin-top:5px; font-size:15px;">بعض اوقات ایسا ہوتا ہے کہ کسی بھائی نے خادم کو زیادہ کیش دیا ہوتا ہے (جس کی وجہ سے <b>اصل خالص رقم</b> سبز رنگ میں نظر آتی ہے)، لیکن <b>${config.isIslamic ? 'فائنل رقم' : 'منافع کے ساتھ فائنل رقم'}</b> منفی (سرخ) ہو جاتی ہے۔ ایسا کیوں ہوتا ہے؟</p>
             <div style="background:#ffffff; padding:15px; border-radius:8px; border:1px solid #ffeeba; margin-top:15px; font-size:14.5px;">
                 <b>مثال کے طور پر (امجد علی کا کیس):</b>
                 <ul style="margin-bottom:0; padding-left:20px; margin-top:10px;">
@@ -1474,7 +1476,7 @@ export function renderCashProfit(config, calc) {
                             <th style="background:var(--g100);color:var(--g800);">ممبر کا نام</th>
                             <th style="background:var(--g100);color:var(--g800);">اصل خالص رقم (بغیر منافع)</th>
                             <th style="background:var(--g100);color:var(--g800);">منافع کی رقم (Profit Amount)</th>
-                            <th style="background:var(--g100);color:var(--g800);">منافع کے ساتھ فائنل رقم</th>
+                            <th style="background:var(--g100);color:var(--g800);">${config.isIslamic ? 'فائنل رقم (بغیر منافع)' : 'منافع کے ساتھ فائنل رقم'}</th>
                             <th style="background:var(--g100);color:var(--g800);">کون کس کو دے گا؟</th>
                             <th style="background:var(--g100);color:var(--g800);">تفصیل</th>
                         </tr>
