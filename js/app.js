@@ -133,6 +133,14 @@ class App {
         document.getElementById('overlay').style.display = 'none';
     }
 
+    openSettings() {
+        document.getElementById('settings-modal').classList.add('show');
+    }
+
+    closeSettings() {
+        document.getElementById('settings-modal').classList.remove('show');
+    }
+
     showInfo(title, text) {
         document.getElementById('modal-title').innerText = title;
         document.getElementById('modal-text').innerHTML = text;

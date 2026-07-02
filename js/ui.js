@@ -258,6 +258,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
 
 
     ${(config.agreementMode === 1) ? `
+    ${(config.agreementMode === 1) ? `
     <!-- OPTION 1 SECTION -->
     <div class="card-hdr-clean">
         <h2>👨‍👩‍👧‍👦 &nbsp;&nbsp; خاندانی ممبران — مختصر خلاصہ (Option 1 کے مطابق) <span class="t-info" style="margin-right:10px" onclick="app.showInfo('طریقہ 1: موجودہ معاہدہ', '${escapeHtml(historyText1)}')">ℹ️</span></h2>
@@ -310,6 +311,9 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
         </div>
     </div>
 
+    ` : ''}
+        
+    ${(config.agreementMode === 2 || !config.agreementMode) ? `
     ` : ''}
         
     ${(config.agreementMode === 2 || !config.agreementMode) ? `
@@ -366,6 +370,7 @@ export function renderDashboard(config, calcDataAll, baseData, ledgers) {
             <p>${historyText2}</p>
         </div>
     </div>
+    ` : ''}
     `;
 }
 
