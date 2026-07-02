@@ -19,7 +19,6 @@
 <body>
 <div class="shell">
 
-<!-- Mobile Nav Overlay -->
 <div class="mobile-nav-overlay" id="overlay" onclick="app.closeMenu()"></div>
 <div class="mobile-nav-menu" id="mobile-menu">
     <button class="close-nav" onclick="app.closeMenu()">✕</button>
@@ -27,11 +26,13 @@
         <img src="images/TaibaLogoMobile.jpg" style="max-width:80%; height:auto; mix-blend-mode:multiply; margin-bottom:15px; border-radius:8px;">
         <br>غلام سرور فیملی کھاتہ (Ledger)
     </div>
-    <a href="#dash" class="nav-item active" id="mob-nav-dash" onclick="app.closeMenu()">مرکزی ڈیش بورڈ</a>
-    <a href="#rent" class="nav-item" id="mob-nav-rent" onclick="app.closeMenu()">کرایہ نامہ</a>
-    <a href="#profit" class="nav-item" id="mob-nav-profit" onclick="app.closeMenu()">منافع کی تقسیم 1149-1-D2</a>
-    <a href="#agri" class="nav-item" id="mob-nav-agri" onclick="app.closeMenu()">زرعی زمین کا ٹھیکہ</a>
-    <a href="#khata" class="nav-item" id="mob-nav-khata" onclick="app.closeMenu()">کھاتہ</a>
+    <a href="#dash" class="nav-item" id="mob-nav-dash" onclick="app.closeMenu()">🏠 ڈیش بورڈ</a>
+    <a href="#rent" class="nav-item" id="mob-nav-rent" onclick="app.closeMenu()">🏘️ کرایہ نامہ</a>
+    <a href="#profit" class="nav-item" id="mob-nav-profit" onclick="app.closeMenu()">📈 منافع کی تقسیم</a>
+    <a href="#agri" class="nav-item" id="mob-nav-agri" onclick="app.closeMenu()">🌾 زرعی زمین کا ٹھیکہ</a>
+    <a href="#cashprofit" class="nav-item" id="mob-nav-cashprofit" onclick="app.closeMenu()">💸 حافظ خادم کیش منافع</a>
+    <a href="#khata" class="nav-item" id="mob-nav-khata" onclick="app.closeMenu()">📒 خاندانی کھاتہ</a>
+    <a href="#summary" class="nav-item" id="mob-nav-summary" onclick="app.closeMenu()">📖 طریقہ کار کی وضاحت</a>
 </div>
 
 <!-- ════ TOP NAVBAR ════ -->
@@ -42,11 +43,13 @@
             غلام سرور فیملی کھاتہ (Ledger)
         </div>
         <div class="nav-links">
-            <a href="#dash" class="nav-item active" id="nav-dash">مرکزی ڈیش بورڈ</a>
-            <a href="#rent" class="nav-item" id="nav-rent">کرایہ نامہ</a>
-            <a href="#profit" class="nav-item" id="nav-profit">منافع کی تقسیم 1149-1-D2</a>
-            <a href="#agri" class="nav-item" id="nav-agri">زرعی زمین کا ٹھیکہ</a>
-            <a href="#khata" class="nav-item" id="nav-khata">کھاتہ</a>
+                <a href="#dash" class="nav-item" id="nav-dash">🏠 ڈیش بورڈ</a>
+                <a href="#rent" class="nav-item" id="nav-rent">🏘️ کرایہ نامہ</a>
+                <a href="#profit" class="nav-item" id="nav-profit">📈 منافع کی تقسیم</a>
+                <a href="#agri" class="nav-item" id="nav-agri">🌾 زرعی زمین کا ٹھیکہ</a>
+                <a href="#cashprofit" class="nav-item" id="nav-cashprofit">💸 حافظ خادم کیش منافع</a>
+                <a href="#khata" class="nav-item" id="nav-khata">📒 خاندانی کھاتہ</a>
+                <a href="#summary" class="nav-item" id="nav-summary">📖 طریقہ کار کی وضاحت</a>
         </div>
         <button class="nav-toggle" onclick="app.openMenu()">☰</button>
     </div>
@@ -103,7 +106,7 @@
   </div>
 </div>
 
-<script src="js/app.js" type="module"></script>
+<script src="js/app.js?v=2" type="module"></script>
 <script>
     // Service Worker Registration
     if ('serviceWorker' in navigator) {

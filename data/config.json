@@ -25,12 +25,18 @@
       "period1": {
         "start": 2016,
         "end": 2020,
-        "brothers": ["ghulam_akbar", "abid_hussain", "abdul_qayyum"]
+        "brothers": [
+          "ghulam_akbar",
+          "abid_hussain",
+          "abdul_qayyum"
+        ]
       },
       "period2": {
         "start": 2021,
         "end": 2026,
-        "brothers": ["abid_hussain"]
+        "brothers": [
+          "abid_hussain"
+        ]
       }
     },
     "paymentsMadeToKhadim": {
@@ -41,16 +47,56 @@
   },
   "rent": {
     "years": [
-      { "year": 2017, "monthly": 19000, "months": 12 },
-      { "year": 2018, "monthly": 22800, "months": 12 },
-      { "year": 2019, "monthly": 25080, "months": 12 },
-      { "year": 2020, "monthly": 27588, "months": 12 },
-      { "year": 2021, "monthly": 35000, "months": 12 },
-      { "year": 2022, "monthly": 45000, "months": 12 },
-      { "year": 2023, "monthly": 49500, "months": 12 },
-      { "year": 2024, "monthly": 54450, "months": 12 },
-      { "year": 2025, "monthly": 59895, "months": 12 },
-      { "year": 2026, "monthly": 65885, "months": 10 }
+      {
+        "year": 2017,
+        "monthly": 19000,
+        "months": 12
+      },
+      {
+        "year": 2018,
+        "monthly": 22800,
+        "months": 12
+      },
+      {
+        "year": 2019,
+        "monthly": 25080,
+        "months": 12
+      },
+      {
+        "year": 2020,
+        "monthly": 27588,
+        "months": 12
+      },
+      {
+        "year": 2021,
+        "monthly": 35000,
+        "months": 12
+      },
+      {
+        "year": 2022,
+        "monthly": 45000,
+        "months": 12
+      },
+      {
+        "year": 2023,
+        "monthly": 49500,
+        "months": 12
+      },
+      {
+        "year": 2024,
+        "monthly": 54450,
+        "months": 12
+      },
+      {
+        "year": 2025,
+        "monthly": 59895,
+        "months": 12
+      },
+      {
+        "year": 2026,
+        "monthly": 65885,
+        "months": 10
+      }
     ]
   },
   "family": {
@@ -148,5 +194,6 @@
         "paidToKhadim": 0
       }
     ]
-  }
+  },
+  "islamicMode": false
 }

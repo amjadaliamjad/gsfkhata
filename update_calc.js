@@ -1,4 +1,8 @@
-// GSFKhata - Core Calculation Engine
+const fs = require('fs');
+const file = 'js/calculator.js';
+let code = fs.readFileSync(file, 'utf8');
+
+let newCalc = `// GSFKhata - Core Calculation Engine
 
 export function calculateScenarios(config, ledgers = {}) {
     const P = config.plot;
@@ -114,12 +118,9 @@ export function calculateScenarios(config, ledgers = {}) {
             let amount = cr - dr; // Positive = Khadim owes member
             if (amount === 0) return;
 
-            let year = 2017; // Default to 2017 if year is missing
-            let match = tx.date.match(/\d{4}/);
-            if (match) {
-                let parsed = parseInt(match[0]);
-                if (parsed > 2000) year = parsed;
-            }
+            let year = 0;
+            let match = tx.date.match(/\\d{4}/);
+            if (match) year = parseInt(match[0]);
             
             let multiplier = 1;
             let yearsHeld = 0;
@@ -241,3 +242,7 @@ export function calculateScenarios(config, ledgers = {}) {
         agri: agri
     };
 }
+`;
+
+fs.writeFileSync(file, newCalc);
+console.log("Updated calculator.js");

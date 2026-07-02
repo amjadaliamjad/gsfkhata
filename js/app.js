@@ -1,6 +1,6 @@
 // GSFKhata - Main Application Controller
-import { calculateScenarios } from './calculator.js';
-import * as UI from './ui.js';
+import { calculateScenarios } from './calculator.js?v=2';
+import * as UI from './ui.js?v=2';
 
 class App {
     constructor() {
@@ -43,7 +43,7 @@ class App {
                 m.receivedRent = cashWithdrawn;
             }
 
-            this.calculations = calculateScenarios(this.config);
+            this.calculations = calculateScenarios(this.config, this.ledgers);
 
             window.addEventListener('hashchange', () => this.handleRoute());
             this.handleRoute();
@@ -59,6 +59,7 @@ class App {
         const parts = hash.split('/');
         this.currentView = parts[0];
         this.viewParam = parts[1];
+        this.subParam = parts[2];
 
         // Update active nav desktop
         document.querySelectorAll('.navbar .nav-item').forEach(n => n.classList.remove('active'));
@@ -86,8 +87,12 @@ class App {
             container.innerHTML = UI.renderProfitDistribution(this.config, this.calculations, this.calculations.base);
         } else if (this.currentView === 'agri') {
             container.innerHTML = UI.renderAgriculture(this.config, this.calculations);
+        } else if (this.currentView === 'cashprofit') {
+            container.innerHTML = UI.renderCashProfit(this.config, this.calculations, this.viewParam);
+        } else if (this.currentView === 'summary') {
+            container.innerHTML = UI.renderExplanation(this.config, this.calculations);
         } else if (this.currentView.startsWith('khata')) {
-            container.innerHTML = UI.renderKhata(this.config, this.ledgers, this.viewParam);
+            container.innerHTML = UI.renderKhata(this.config, this.ledgers, this.viewParam, this.subParam);
         } else {
             container.innerHTML = `<h2>صفحہ نہیں ملا</h2>`;
         }
