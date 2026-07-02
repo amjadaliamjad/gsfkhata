@@ -46,8 +46,7 @@ class App {
 
             // Initial calculation
             this.calculations = calculateScenarios(this.config, this.ledgers, this.isIslamic);
-            let tgl = document.getElementById('islamic-mode-toggle');
-            if(tgl) tgl.checked = this.isIslamic;
+            if(typeof updateIslamicUI === 'function') updateIslamicUI(this.isIslamic);
             
             window.addEventListener('hashchange', () => this.handleRoute());
             this.handleRoute();
