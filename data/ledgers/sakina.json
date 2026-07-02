@@ -25,7 +25,7 @@
     "page": "54",
     "debit": "2,037",
     "credit": "",
-    "balance": "20,763",
+    "balance": "",
     "id": 3,
     "type": "cash"
   },
@@ -55,7 +55,7 @@
     "page": "54",
     "debit": "250",
     "credit": "",
-    "balance": "2,315",
+    "balance": "",
     "id": 6,
     "type": "cash"
   },
@@ -65,8 +65,18 @@
     "page": "54",
     "debit": "50",
     "credit": "",
-    "balance": "2,265",
+    "balance": "2,235",
     "id": 7,
+    "type": "cash"
+  },
+    {
+    "date": "--/--/----",
+    "description": "وکیل کی فیس",
+    "page": "54",
+    "debit": "100",
+    "credit": "",
+    "balance": "2,035",
+    "id": 8,
     "type": "cash"
   },
   {
@@ -75,8 +85,8 @@
     "page": "54",
     "debit": "3,000",
     "credit": "",
-    "balance": "-735",
-    "id": 8,
+    "balance": "-965",
+    "id": 9,
     "type": "cash"
   },
   {
@@ -85,18 +95,18 @@
     "page": "54",
     "debit": "",
     "credit": "11,400",
-    "balance": "10,665",
-    "id": 9,
+    "balance": "10,435",
+    "id": 10,
     "type": "rent"
   },
   {
     "date": "27/02/2021",
-    "description": "عامر کی والدہ کو انکوائری دی",
+    "description": "عامر کی والدہ کو نقد کیش",
     "page": "54",
     "debit": "5,000",
     "credit": "",
-    "balance": "5,665",
-    "id": 10,
+    "balance": "5,435",
+    "id": 11,
     "type": "cash"
   },
   {
@@ -105,8 +115,8 @@
     "page": "54",
     "debit": "1,000",
     "credit": "",
-    "balance": "4,665",
-    "id": 11,
+    "balance": "4,435",
+    "id": 12,
     "type": "cash"
   },
   {
@@ -115,8 +125,8 @@
     "page": "54",
     "debit": "",
     "credit": "13,000",
-    "balance": "17,665",
-    "id": 12,
+    "balance": "",
+    "id": 13,
     "type": "rent"
   },
   {
@@ -125,8 +135,8 @@
     "page": "54",
     "debit": "",
     "credit": "22,500",
-    "balance": "40,165",
-    "id": 13,
+    "balance": "35,500",
+    "id": 14,
     "type": "rent"
   },
   {
@@ -135,8 +145,8 @@
     "page": "54",
     "debit": "",
     "credit": "7,800",
-    "balance": "47,965",
-    "id": 14,
+    "balance": "43,300",
+    "id": 15,
     "type": "rent"
   },
   {
@@ -145,8 +155,8 @@
     "page": "54",
     "debit": "5,000",
     "credit": "",
-    "balance": "42,965",
-    "id": 15,
+    "balance": "38,300",
+    "id": 16,
     "type": "cash"
   },
   {
@@ -155,8 +165,8 @@
     "page": "54",
     "debit": "",
     "credit": "24,750",
-    "balance": "67,715",
-    "id": 16,
+    "balance": "63,050",
+    "id": 17,
     "type": "rent"
   },
   {
@@ -165,8 +175,8 @@
     "page": "54",
     "debit": "2,000",
     "credit": "",
-    "balance": "65,715",
-    "id": 17,
+    "balance": "61,050",
+    "id": 18,
     "type": "cash"
   },
   {
@@ -175,18 +185,18 @@
     "page": "60",
     "debit": "",
     "credit": "",
-    "balance": "65,715",
-    "id": 18,
+    "balance": "61,050",
+    "id": 19,
     "type": "cash"
   },
   {
     "date": "23/10/2023",
-    "description": "نقد کیش ساجد رحمن",
+    "description": "نقد کیش  سکینہ ",
     "page": "60",
     "debit": "10,000",
     "credit": "",
-    "balance": "55,715",
-    "id": 19,
+    "balance": "51,050",
+    "id": 20,
     "type": "cash"
   },
   {
@@ -195,28 +205,28 @@
     "page": "60",
     "debit": "6,000",
     "credit": "",
-    "balance": "49,715",
-    "id": 20,
+    "balance": "45,050",
+    "id": 21,
     "type": "cash"
   },
   {
     "date": "28/10/2023",
-    "description": "بل انکوائری بجلی کا بل",
+    "description": "اکتوبر نومبر کا بجلی کا بل ",
     "page": "60",
     "debit": "1,800",
     "credit": "",
-    "balance": "47,915",
-    "id": 21,
+    "balance": "43,250",
+    "id": 22,
     "type": "cash"
   },
   {
     "date": "--/11/----",
     "description": "نومبر کا کرایہ",
     "page": "60",
-    "debit": "3,170",
+    "debit": "2,062",
     "credit": "",
-    "balance": "44,745",
-    "id": 22,
+    "balance": "",
+    "id": 23,
     "type": "rent"
   },
   {
@@ -225,8 +235,8 @@
     "page": "60",
     "debit": "1,100",
     "credit": "",
-    "balance": "43,645",
-    "id": 23,
+    "balance": "40,080",
+    "id": 24,
     "type": "cash"
   },
   {
@@ -235,8 +245,8 @@
     "page": "60",
     "debit": "1,100",
     "credit": "",
-    "balance": "42,545",
-    "id": 24,
+    "balance": "38,980",
+    "id": 25,
     "type": "cash"
   },
   {
@@ -245,8 +255,8 @@
     "page": "60",
     "debit": "1,833",
     "credit": "",
-    "balance": "40,712",
-    "id": 25,
+    "balance": "37,147",
+    "id": 26,
     "type": "cash"
   },
   {
@@ -255,8 +265,8 @@
     "page": "60",
     "debit": "",
     "credit": "27,225",
-    "balance": "67,937",
-    "id": 26,
+    "balance": "64,372",
+    "id": 27,
     "type": "rent"
   },
   {
@@ -265,8 +275,8 @@
     "page": "60",
     "debit": "13,612",
     "credit": "",
-    "balance": "54,325",
-    "id": 27,
+    "balance": "50,760",
+    "id": 28,
     "type": "rent"
   },
   {
@@ -275,8 +285,8 @@
     "page": "60",
     "debit": "1,500",
     "credit": "",
-    "balance": "52,825",
-    "id": 28,
+    "balance": "",
+    "id": 29,
     "type": "cash"
   },
   {
@@ -285,8 +295,8 @@
     "page": "60",
     "debit": "2,000",
     "credit": "",
-    "balance": "50,825",
-    "id": 29,
+    "balance": "",
+    "id": 30,
     "type": "cash"
   },
   {
@@ -295,8 +305,8 @@
     "page": "60",
     "debit": "1,200",
     "credit": "",
-    "balance": "49,625",
-    "id": 30,
+    "balance": "46,060",
+    "id": 31,
     "type": "cash"
   },
   {
@@ -305,8 +315,8 @@
     "page": "60",
     "debit": "15,000",
     "credit": "",
-    "balance": "34,625",
-    "id": 31,
+    "balance": "31,060",
+    "id": 32,
     "type": "cash"
   },
   {
@@ -315,8 +325,8 @@
     "page": "60",
     "debit": "",
     "credit": "29,947",
-    "balance": "64,572",
-    "id": 32,
+    "balance": "61,007",
+    "id": 33,
     "type": "rent"
   }
 ]
