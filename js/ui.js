@@ -304,68 +304,12 @@ ${(config.agreementMode === 1) ? `
                 </tbody>
             </table>
         </div>
-        <div class="table-expl">
-            <p><strong>طریقہ 1 کی مکمل تاریخ اور وضاحت:</strong></p>
-            <p>${historyText1}</p>
-        </div>
-    </div>
-
-` : ''}
-
-    ${(config.agreementMode === 2 || !config.agreementMode) ? `
-    <br><hr style="border:none;border-top:2px dashed var(--g300);margin:30px 0;"><br>
-
-    <!-- OPTION 2 SECTION -->
-    <div class="card-hdr-clean">
-        <h2>👨‍👩‍👧‍👦 &nbsp;&nbsp; خاندانی ممبران — مختصر خلاصہ (Option 2 کے مطابق) <span class="t-info" style="margin-right:10px" onclick="app.showInfo('طریقہ 2: پلاٹ منافع (شرعی اصول)', '${escapeHtml(historyText2)}')">ℹ️</span></h2>
-    </div>
-    <div class="mem-grid">
-        ${membersHtml2}
-    </div>
-
-    <!-- Details Table Option 2 -->
-    <div class="table-container">
-        <h3 style="justify-content:space-between">
-            <span>📈 طریقہ 2: انویسٹمنٹ اور کرائے پر پلاٹ منافع (${config.isIslamic ? 'شرعی اصول / بغیر کرایہ منافع' : 'شرعی اصول'})</span>
-            <span class="t-info" onclick="app.showInfo('جدول کی تفصیل (طریقہ 2)', 'یہ جدول انصاف اور شرعی اصول پر مبنی ہے۔<br><br>• <b>پلاٹ کا حصہ:</b> خادم کی 2017 کی انویسٹمنٹ کو آج کے پلاٹ کی قیمت میں اضافے کے حساب سے بڑھایا گیا ہے۔<br>• <b>کرایہ منافع کیساتھ:</b> جو کرایہ جس سال خادم کے پاس جمع ہوا، اس پر بھی پلاٹ کا وہی منافع لگا کر آج کی ویلیو نکالی گئی ہے۔ اس سے بھائیوں کو ان کے رکے ہوئے کرائے پر بہترین فائدہ ملتا ہے۔')">ℹ️</span>
-        </h3>
-        <div class="tw">
-            <table class="tbl">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>بھائی کا نام</th>
-                        <th>پلاٹ کا حصہ</th>
-                        <th>کل کرایہ (${config.isIslamic ? 'بغیر منافع' : 'منافع کے ساتھ'})</th>
-                        <th>وصول شدہ</th>
-                        <th>بقایا کرایہ</th>
-                        <th>قابل ادا (زمین)</th>
-                        <th>ادا شدہ</th>
-                        <th>بقایا</th>
-                        <th>حیثیت</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${table2Rows}
-                    <tr class="tot">
-                        <td colspan="2">کل مجموعہ</td>
-                        <td class="n">-</td>
-                        <td class="n">${num(calcData2.brotherBase.rent * 9)}</td>
-                        <td class="n">${num(baseData.totalReceivedRent)}</td>
-                        <td class="n">${num((calcData2.brotherBase.rent * 9) - baseData.totalReceivedRent)}</td>
-                        <td class="n">${num(baseData.specialPaymentToKhadim)}</td>
-                        <td class="n">0</td>
-                        <td class="n">-</td>
-                        <td>-</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-expl">
+                <div class="table-expl">
             <p><strong>طریقہ 2 کی مکمل تاریخ اور شرعی اصول:</strong></p>
             <p>${historyText2}</p>
         </div>
     </div>
+    ` : ''}
     `;
 }
 
