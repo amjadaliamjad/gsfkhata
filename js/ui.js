@@ -1302,8 +1302,8 @@ export function renderKhata(config, ledgers, idParam, tabParam) {
     return `
     <div>
         ${renderIslamicWarning(config.isIslamic)}
-        ${topMenuHTML}
         ${summaryTableHTML}
+        ${topMenuHTML}
         ${detailHTML}
     </div>
     `;
