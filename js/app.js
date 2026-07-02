@@ -8,6 +8,7 @@ class App {
         this.ledgers = {};
         this.calculations = null;
         this.currentView = 'dash';
+        this.isIslamic = false; // Default: Profit is ON
     }
 
     async init() {
@@ -43,8 +44,11 @@ class App {
                 m.receivedRent = cashWithdrawn;
             }
 
-            this.calculations = calculateScenarios(this.config, this.ledgers);
-
+            // Initial calculation
+            this.calculations = calculateScenarios(this.config, this.ledgers, this.isIslamic);
+            let tgl = document.getElementById('islamic-mode-toggle');
+            if(tgl) tgl.checked = this.isIslamic;
+            
             window.addEventListener('hashchange', () => this.handleRoute());
             this.handleRoute();
 
@@ -76,8 +80,18 @@ class App {
         this.renderView();
     }
 
+    toggleIslamicMode(isIslamic) {
+        this.isIslamic = isIslamic;
+        this.config.isIslamic = isIslamic;
+        // Recalculate everything with the new mode
+        this.calculations = calculateScenarios(this.config, this.ledgers, this.isIslamic);
+        // Re-render
+        this.renderView();
+    }
+
     renderView() {
         const container = document.getElementById('view-container');
+        this.config.isIslamic = this.isIslamic; // Ensure it's always set
         
         if (this.currentView === 'dash') {
             container.innerHTML = UI.renderDashboard(this.config, this.calculations, this.calculations.base, this.ledgers);

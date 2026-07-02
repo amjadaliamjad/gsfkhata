@@ -1,6 +1,6 @@
 // GSFKhata - Core Calculation Engine
 
-export function calculateScenarios(config, ledgers = {}) {
+export function calculateScenarios(config, ledgers = {}, isIslamic = false) {
     const P = config.plot;
     const L = config.land;
     const R = config.rent;
@@ -60,7 +60,7 @@ export function calculateScenarios(config, ledgers = {}) {
     let s2_rentByYear = R.years.map(y => {
         const amount = y.monthly * y.months;
         const yearsHeld = 2026 - y.year;
-        const amountWithProfit = Math.round(amount * Math.pow(1 + cagr, yearsHeld));
+        const amountWithProfit = isIslamic ? amount : Math.round(amount * Math.pow(1 + cagr, yearsHeld));
         s2_totalRentWithProfit += amountWithProfit;
         return { year: y.year, base: amount, withProfit: amountWithProfit };
     });
@@ -125,7 +125,7 @@ export function calculateScenarios(config, ledgers = {}) {
             let yearsHeld = 0;
             if (year >= 2017) {
                 yearsHeld = 2026 - year;
-                multiplier = Math.pow(1 + cagr, yearsHeld);
+                multiplier = isIslamic ? 1 : Math.pow(1 + cagr, yearsHeld);
             }
 
             let amountWithProfit = Math.round(amount * multiplier);
@@ -188,6 +188,7 @@ export function calculateScenarios(config, ledgers = {}) {
 
         let numYears = A.endYear - A.startYear;
         let calcIncrement = Math.pow(A.endRatePerAcre2026 / A.baseRatePerAcre2016, 1 / numYears) - 1;
+        if (isIslamic) calcIncrement = 0; // No increment in Islamic mode
         agri.incrementPercent = (calcIncrement * 100).toFixed(2);
 
         let khadimOpt1Kanals = 10.9;
