@@ -101,7 +101,7 @@
   },
   {
     "date": "--/--/----",
-    "description": "Petrol رکشہ",
+    "description": "پیٹرول رکشہ",
     "page": "53",
     "debit": "2,000",
     "credit": "",
@@ -131,7 +131,7 @@
   },
   {
     "date": "15/03/2023",
-    "description": "Safdar ko deya Amdaad k jang Rizwan k account mein",
+    "description": "صفدر کو دیا امداد کے لئے رضوان کے اکاؤنٹ میں",
     "page": "53",
     "debit": "30,000",
     "credit": "",
@@ -151,7 +151,7 @@
   },
   {
     "date": "20/04/2023",
-    "description": "Safdar ko deay Arshad ki walda ko deay amdaad ki",
+    "description": "صفدر کو دیے ارشد کی والدہ کو دیے امداد کے",
     "page": "53",
     "debit": "20,000",
     "credit": "",
@@ -181,7 +181,7 @@
   },
   {
     "date": "--/--/----",
-    "description": "Amjid sy hudaar leay",
+    "description": "امجد سے ادھار لیے",
     "page": "82",
     "debit": "",
     "credit": "100,000",
@@ -241,7 +241,7 @@
   },
   {
     "date": "12/08/2023",
-    "description": "Amir ko kharcha diya",
+    "description": "عامر کو خرچہ دیا",
     "page": "82",
     "debit": "8000",
     "credit": "",
@@ -331,7 +331,7 @@
   },
   {
     "date": "01/04/2024",
-    "description": "Sufdar ny muhammad umar k account mein kiraya",
+    "description": "صفدر نے محمد عمر کے اکاؤنٹ میں کرایہ",
     "page": "82",
     "debit": "250,000",
     "credit": "",
