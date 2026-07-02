@@ -1,6 +1,6 @@
 // GSFKhata - Main Application Controller
-import { calculateScenarios } from './calculator.js?v=3';
-import * as UI from './ui.js?v=3';
+import { calculateScenarios } from './calculator.js?v=4';
+import * as UI from './ui.js?v=4';
 
 class App {
     constructor() {
